@@ -1473,6 +1473,7 @@
 	NSTabViewItem *item = [sender representedObject];
 	[sender retain];
 	if(([_cells count] == 1) && (![self canCloseOnlyTab])) {
+		[sender release];
 		return;
 	}
 
@@ -1480,6 +1481,7 @@
 		if(![[self delegate] tabView:tabView shouldCloseTabViewItem:item]) {
 			// fix mouse downed close button
 			[sender setCloseButtonPressed:NO];
+			[sender release];
 			return;
 		}
 	}
