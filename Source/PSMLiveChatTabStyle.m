@@ -48,21 +48,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	[liveChatCloseButton release];
-	[liveChatCloseButtonDown release];
-	[liveChatCloseButtonOver release];
-	[liveChatCloseDirtyButton release];
-	[liveChatCloseDirtyButtonDown release];
-	[liveChatCloseDirtyButtonOver release];
-	[_addTabButtonImage release];
-	[_addTabButtonPressedImage release];
-	[_addTabButtonRolloverImage release];
-
-	[_objectCountStringAttributes release];
-
-	[super dealloc];
-}
 
 #pragma mark -
 #pragma mark Control Specific
@@ -331,13 +316,13 @@
 
 - (NSAttributedString *)attributedObjectCountStringValueForTabCell:(PSMTabBarCell *)cell {
 	NSString *contents = [NSString stringWithFormat:@"%lu", (unsigned long)[cell count]];
-	return [[[NSMutableAttributedString alloc] initWithString:contents attributes:_objectCountStringAttributes] autorelease];
+	return [[NSMutableAttributedString alloc] initWithString:contents attributes:_objectCountStringAttributes];
 }
 
 - (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell {
 	NSMutableAttributedString *attrStr;
 	NSString * contents = [cell title];
-	attrStr = [[[NSMutableAttributedString alloc] initWithString:contents] autorelease];
+	attrStr = [[NSMutableAttributedString alloc] initWithString:contents];
 	NSRange range = NSMakeRange(0, [contents length]);
 
 	[attrStr addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:11.0] range:range];
@@ -345,7 +330,7 @@
 	// Paragraph Style for Truncating Long Text
 	static NSMutableParagraphStyle *TruncatingTailParagraphStyle = nil;
 	if(!TruncatingTailParagraphStyle) {
-		TruncatingTailParagraphStyle = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] retain];
+		TruncatingTailParagraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
 		[TruncatingTailParagraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
 	}
 	[attrStr addAttribute:NSParagraphStyleAttributeName value:TruncatingTailParagraphStyle range:range];
@@ -413,7 +398,6 @@
         
         NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:startColor endingColor:endColor];
         [gradient drawInBezierPath:bezier angle:90.0];
-        [gradient release];
 
 		[lineColor set];
 		[bezier stroke];
@@ -457,7 +441,6 @@
 		NSBezierPath *path = [NSBezierPath bezierPathWithRect:gradientRect];
         NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedWhite:0.75 alpha:1.0] endingColor:[NSColor colorWithCalibratedWhite:0.75 alpha:0.0]];
         [gradient drawInBezierPath:path angle:90.0];
-        [gradient release];
 	}
     
 	[[NSColor colorWithCalibratedWhite:0.576 alpha:1.0] set];

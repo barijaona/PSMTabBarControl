@@ -109,12 +109,9 @@
 }
 
 - (void)dealloc {
-	[_countColor release];
 
 	[_indicator removeFromSuperviewWithoutNeedingDisplay];
 
-	[_indicator release];
-	[super dealloc];
 }
 
 #pragma mark -
@@ -552,8 +549,8 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
     // We make the view the owner, and it delegates the calls back to the cell after it is properly setup for the corresponding row/column in the outlineview
     area = [[NSTrackingArea alloc] initWithRect:cellFrame options:options owner:controlView userInfo:enrichedUserInfo];
     [controlView addTrackingArea:area];
-    [area release], area = nil;
-    [enrichedUserInfo release], enrichedUserInfo = nil;
+    area = nil;
+    enrichedUserInfo = nil;
 
     // ---- add tracking area for close button ----
     
@@ -573,9 +570,9 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
         // We make the view the owner, and it delegates the calls back to the cell after it is properly setup for the corresponding row/column in the outlineview
         area = [[NSTrackingArea alloc] initWithRect:closeButtonRect options:options owner:controlView userInfo:enrichedUserInfo];
         [controlView addTrackingArea:area];
-        [area release], area = nil;
+        area = nil;
 
-        [enrichedUserInfo release], enrichedUserInfo = nil;        
+        enrichedUserInfo = nil;        
     }
 }
 
@@ -649,11 +646,11 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
     PSMTabBarControl *tabBarControl = [self controlView];
 
 	[tabBarControl lockFocus];
-	NSBitmapImageRep *rep = [[[NSBitmapImageRep alloc] initWithFocusedViewRect:cellFrame] autorelease];
+	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:cellFrame];
 	[tabBarControl unlockFocus];
-	NSImage *image = [[[NSImage alloc] initWithSize:[rep size]] autorelease];
+	NSImage *image = [[NSImage alloc] initWithSize:[rep size]];
 	[image addRepresentation:rep];
-	NSImage *returnImage = [[[NSImage alloc] initWithSize:[rep size]] autorelease];
+	NSImage *returnImage = [[NSImage alloc] initWithSize:[rep size]];
 	[returnImage lockFocus];
     [image drawAtPoint:NSMakePoint(0.0, 0.0) fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
 	[returnImage unlockFocus];
@@ -663,7 +660,6 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 		NSPoint indicatorPoint = NSMakePoint([self frame].size.width - MARGIN_X - kPSMTabBarIndicatorWidth, MARGIN_Y);
         [pi drawAtPoint:indicatorPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
 		[returnImage unlockFocus];
-		[pi release];
 	}
 	return returnImage;
 }
@@ -703,7 +699,7 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 			_tabState = [aDecoder decodeIntegerForKey:@"tabState"];
 			_closeButtonOver = [aDecoder decodeBoolForKey:@"closeButtonOver"];
 			_closeButtonPressed = [aDecoder decodeBoolForKey:@"closeButtonPressed"];
-			_indicator = [[aDecoder decodeObjectForKey:@"indicator"] retain];
+			_indicator = [aDecoder decodeObjectForKey:@"indicator"];
 			_isInOverflowMenu = [aDecoder decodeBoolForKey:@"isInOverflowMenu"];
 			_hasCloseButton = [aDecoder decodeBoolForKey:@"hasCloseButton"];
 			_isCloseButtonSuppressed = [aDecoder decodeBoolForKey:@"isCloseButtonSuppressed"];
@@ -1093,7 +1089,7 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 
 	NSMutableAttributedString *attrStr;
 	NSString *contents = [self title];
-	attrStr = [[[NSMutableAttributedString alloc] initWithString:contents] autorelease];
+	attrStr = [[NSMutableAttributedString alloc] initWithString:contents];
 	NSRange range = NSMakeRange(0, [contents length]);
 
 	[attrStr addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:11.0] range:range];
@@ -1102,7 +1098,7 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 	// Paragraph Style for Truncating Long Text
 	static NSMutableParagraphStyle *truncatingTailParagraphStyle = nil;
 	if(!truncatingTailParagraphStyle) {
-		truncatingTailParagraphStyle = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] retain];
+		truncatingTailParagraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
 		[truncatingTailParagraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
 		[truncatingTailParagraphStyle setAlignment:NSCenterTextAlignment];
 	}
@@ -1120,7 +1116,7 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
     }
 
 	NSString *contents = [NSString stringWithFormat:@"%lu", (unsigned long)[self count]];
-	return [[[NSMutableAttributedString alloc] initWithString:contents attributes:objectCountStringAttributes] autorelease];
+	return [[NSMutableAttributedString alloc] initWithString:contents attributes:objectCountStringAttributes];
 }
 
 - (void)_drawWithFrame:(NSRect)cellFrame inTabBarControl:(PSMTabBarControl *)tabBarControl {
@@ -1220,7 +1216,6 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 
     [NSGraphicsContext restoreGraphicsState];
         
-    [shadow release];
 }
 
 - (void)_drawObjectCounterWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl {

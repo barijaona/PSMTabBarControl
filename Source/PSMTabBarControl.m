@@ -94,7 +94,7 @@ static NSMutableDictionary *registeredStyleClasses;
 +(void)initialize {
 
     if (registeredStyleClasses == nil) {
-        registeredStyleClasses = [[NSMutableDictionary dictionaryWithCapacity:10] retain];
+        registeredStyleClasses = [NSMutableDictionary dictionaryWithCapacity:10];
         
         [self registerDefaultTabStyleClasses];
     }
@@ -286,14 +286,14 @@ static NSMutableDictionary *registeredStyleClasses;
 
 	//stop any animations that may be running
 	[_animationTimer invalidate];
-	[_animationTimer release]; _animationTimer = nil;
+	 _animationTimer = nil;
 
 	[_showHideAnimationTimer invalidate];
-	[_showHideAnimationTimer release]; _showHideAnimationTimer = nil;
+	 _showHideAnimationTimer = nil;
 
 	//Also unwind the spring, if it's wound.
 	[_springTimer invalidate];
-	[_springTimer release]; _springTimer = nil;
+	 _springTimer = nil;
 
 	//unbind all the items to prevent crashing
 	//not sure if this is necessary or not
@@ -302,20 +302,10 @@ static NSMutableDictionary *registeredStyleClasses;
     for (PSMTabBarCell *aCell in tmpCellArray) {
 		[self removeTabForCell:aCell];
 	}
-    [tmpCellArray release];
 
-	[_overflowPopUpButton release];
-	[_cells release];
-	[_controller release];
-	[tabView release];
-	[_addTabButton release];
-	[partnerView release];
-	[_lastMouseDownEvent release];
-	[style release];
 
 	[self unregisterDraggedTypes];
 
-	[super dealloc];
 }
 
 - (void)awakeFromNib {
@@ -337,7 +327,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
 	if(_showHideAnimationTimer) {
 		[_showHideAnimationTimer invalidate];
-		[_showHideAnimationTimer release]; _showHideAnimationTimer = nil;
+		 _showHideAnimationTimer = nil;
 	}
 
 	if(aWindow) {
@@ -385,7 +375,7 @@ static NSMutableDictionary *registeredStyleClasses;
 #pragma mark Cell Management (KVC Compliant)
 
 - (NSArray *)cells {
-    return [[_cells copy] autorelease];
+    return [_cells copy];
 }
 
 // ---- KVC primitives ----
@@ -453,8 +443,6 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 - (void)setLastMouseDownEvent:(NSEvent *)event {
-	[event retain];
-	[_lastMouseDownEvent release];
 	_lastMouseDownEvent = event;
 }
 
@@ -480,8 +468,6 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 - (void)setTabView:(NSTabView *)view {
-	[view retain];
-	[tabView release];
 	tabView = view;
 }
 
@@ -495,8 +481,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
 - (void)setStyle:(id <PSMTabStyle>)newStyle {
 	if(style != newStyle) {
-		[style autorelease];
-		style = [newStyle retain];
+		style = newStyle;
 
 		// restyle add tab button
 		if(_addTabButton) {
@@ -528,7 +513,6 @@ static NSMutableDictionary *registeredStyleClasses;
 
     id <PSMTabStyle> newStyle = [[(Class)styleClass alloc] init];
 	[self setStyle:newStyle];
-	[newStyle release];
 }
 
 - (PSMTabBarOrientation)orientation {
@@ -742,7 +726,6 @@ static NSMutableDictionary *registeredStyleClasses;
 
 	// add to collection
     [self insertCell:cell atIndex:index];
-	[cell release];
 	if([_cells count] == [tabView numberOfTabViewItems]) {
 		[self update]; // don't update unless all are accounted for!
 	}
@@ -1012,9 +995,8 @@ static NSMutableDictionary *registeredStyleClasses;
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:myOriginalOrigin], @"myOriginalOrigin", [NSNumber numberWithDouble:partnerOriginalOrigin], @"partnerOriginalOrigin", [NSNumber numberWithDouble:myOriginalSize], @"myOriginalSize", [NSNumber numberWithDouble:partnerOriginalSize], @"partnerOriginalSize", [NSNumber numberWithDouble:myTargetOrigin], @"myTargetOrigin", [NSNumber numberWithDouble:partnerTargetOrigin], @"partnerTargetOrigin", [NSNumber numberWithDouble:myTargetSize], @"myTargetSize", [NSNumber numberWithDouble:partnerTargetSize], @"partnerTargetSize", nil];
 	if(_showHideAnimationTimer) {
 		[_showHideAnimationTimer invalidate];
-		[_showHideAnimationTimer release];
 	}
-	_showHideAnimationTimer = [[NSTimer scheduledTimerWithTimeInterval:(1.0 / 30.0) target:self selector:@selector(animateShowHide:) userInfo:userInfo repeats:YES] retain];
+	_showHideAnimationTimer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / 30.0) target:self selector:@selector(animateShowHide:) userInfo:userInfo repeats:YES];
 }
 
 - (void)animateShowHide:(NSTimer *)timer {
@@ -1078,7 +1060,7 @@ static NSMutableDictionary *registeredStyleClasses;
 		}
 
 		[_showHideAnimationTimer invalidate];
-		[_showHideAnimationTimer release]; _showHideAnimationTimer = nil;
+		 _showHideAnimationTimer = nil;
 	}
 	[[self window] display];
 }
@@ -1096,8 +1078,6 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 - (void)setPartnerView:(id)view {
-	[partnerView release];
-	[view retain];
 	partnerView = view;
 }
 
@@ -1270,7 +1250,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
 	if(_animationTimer) {
 		[_animationTimer invalidate];
-		[_animationTimer release]; _animationTimer = nil;
+		 _animationTimer = nil;
 	}
 
 	if(animate) {
@@ -1286,12 +1266,11 @@ static NSMutableDictionary *registeredStyleClasses;
 		NSAnimation *animation = [[NSAnimation alloc] initWithDuration:0.50 animationCurve:NSAnimationEaseInOut];
 		[animation setAnimationBlockingMode:NSAnimationNonblocking];
 		[animation startAnimation];
-		_animationTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 / 30.0
+		_animationTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 / 30.0
 							target:self
 							selector:@selector(_animateCells:)
 							userInfo:[NSArray arrayWithObjects:targetFrames, animation, nil]
-							repeats:YES] retain];
-		[animation release];
+							repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:_animationTimer forMode:NSEventTrackingRunLoopMode];
 		[self _animateCells:_animationTimer];
 	} else {
@@ -1380,7 +1359,7 @@ static NSMutableDictionary *registeredStyleClasses;
 		}
 
 		[_animationTimer invalidate];
-		[_animationTimer release]; _animationTimer = nil;
+		 _animationTimer = nil;
 
         [self updateTrackingAreas];
 	}
@@ -1600,7 +1579,7 @@ static NSMutableDictionary *registeredStyleClasses;
 						}
 					}
                     
-                    [tmpCellArray release], tmpCellArray = nil;
+                    tmpCellArray = nil;
                     
 					//Fix the close button for the clicked tab not to be pressed
 					[cell setCloseButtonPressed:NO];
@@ -1729,18 +1708,18 @@ static NSMutableDictionary *registeredStyleClasses;
 		//If the user has dragged to a different tab, reset the timer.
 		if(_tabViewItemWithSpring != [cell representedObject]) {
 			[_springTimer invalidate];
-			[_springTimer release]; _springTimer = nil;
+			 _springTimer = nil;
 			_tabViewItemWithSpring = [cell representedObject];
 		}
 		if(!_springTimer) {
 			//Finder's default delay time, as of Tiger, is 668 ms. If the user has never changed it, there's no setting in its defaults, so we default to that amount.
-			NSNumber *delayNumber = NSMakeCollectable([(NSNumber *)CFPreferencesCopyAppValue((CFStringRef)@"SpringingDelayMilliseconds", (CFStringRef)@"com.apple.finder") autorelease]);
+			NSNumber *delayNumber = (NSNumber *)CFBridgingRelease(CFPreferencesCopyAppValue((CFStringRef)@"SpringingDelayMilliseconds", (CFStringRef)@"com.apple.finder"));
 			NSTimeInterval delaySeconds = delayNumber ?[delayNumber doubleValue] / 1000.0 : 0.668;
-			_springTimer = [[NSTimer scheduledTimerWithTimeInterval:delaySeconds
+			_springTimer = [NSTimer scheduledTimerWithTimeInterval:delaySeconds
 							 target:self
 							 selector:@selector(fireSpring:)
 							 userInfo:sender
-							 repeats:NO] retain];
+							 repeats:NO];
 		}
 		return NSDragOperationCopy;
 	}
@@ -1750,7 +1729,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
 - (void)draggingExited:(id <NSDraggingInfo>)sender {
 	[_springTimer invalidate];
-	[_springTimer release]; _springTimer = nil;
+	 _springTimer = nil;
 
 	[[PSMTabDragAssistant sharedDragAssistant] draggingExitedTabBarControl:self];
 }
@@ -1790,7 +1769,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
 	_tabViewItemWithSpring = nil;
 	[_springTimer invalidate];
-	[_springTimer release]; _springTimer = nil;
+	 _springTimer = nil;
 }
 
 #pragma mark -
@@ -1807,7 +1786,6 @@ static NSMutableDictionary *registeredStyleClasses;
 		return;
 	}
 
-	[sender retain];
 
     if (([self delegate]) && ([[self delegate] respondsToSelector:@selector(tabView:shouldCloseTabViewItem:)])) {
         if (![[self delegate] tabView:tabView shouldCloseTabViewItem:[sender representedObject]]) {
@@ -1821,15 +1799,14 @@ static NSMutableDictionary *registeredStyleClasses;
          [[self delegate] tabView:tabView willCloseTabViewItem:[sender representedObject]];
     }
      
-    [[sender representedObject] retain];
+    [sender representedObject];
     [tabView removeTabViewItem:[sender representedObject]];
      
     if (([self delegate]) && ([[self delegate] respondsToSelector:@selector(tabView:didCloseTabViewItem:)])) {
          [[self delegate] tabView:tabView didCloseTabViewItem:[sender representedObject]];
     }
-    [[sender representedObject] release];
+    [sender representedObject];
 
-	[sender release];
 }
 
 - (void)tabClick:(id)sender {
@@ -1976,16 +1953,12 @@ static NSMutableDictionary *registeredStyleClasses;
 			[aTabView setDelegate:nil];
 
 			// move it all around first
-			[tabViewItem retain];
-			[thisCell retain];
 			[aTabView removeTabViewItem:tabViewItem];
 			[aTabView insertTabViewItem:tabViewItem atIndex:0];
             [self removeCellAtIndex:tabIndex];
             [self insertCell:thisCell atIndex:0];
 			[thisCell setIsInOverflowMenu:NO];                  //very important else we get a fun recursive loop going
 			[[_cells objectAtIndex:[_cells count] - 1] setIsInOverflowMenu:YES];             //these 2 lines are pretty uncool and this logic needs to be updated
-			[thisCell release];
-			[tabViewItem release];
 
 			[aTabView setDelegate:tempDelegate];
 
@@ -2033,7 +2006,7 @@ static NSMutableDictionary *registeredStyleClasses;
 			[self removeTabForCell:cell];
 		}
 	}
-    [tmpCellArray release], tmpCellArray = nil;
+    tmpCellArray = nil;
 
 	// go through tab view items, add cell for any not present
 	NSMutableArray *cellItems = [self representedTabViewItems];  
@@ -2114,11 +2087,11 @@ static NSMutableDictionary *registeredStyleClasses;
 		[self setPostsFrameChangedNotifications:YES];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(frameDidChange:) name:NSViewFrameDidChangeNotification object:self];
 		if ([aDecoder allowsKeyedCoding]) {
-			_cells = [[aDecoder decodeObjectForKey:@"PSMcells"] retain];
-			tabView = [[aDecoder decodeObjectForKey:@"PSMtabView"] retain];
-			_overflowPopUpButton = [[aDecoder decodeObjectForKey:@"PSMoverflowPopUpButton"] retain];
-			_addTabButton = [[aDecoder decodeObjectForKey:@"PSMaddTabButton"] retain];
-			style = [[aDecoder decodeObjectForKey:@"PSMstyle"] retain];
+			_cells = [aDecoder decodeObjectForKey:@"PSMcells"];
+			tabView = [aDecoder decodeObjectForKey:@"PSMtabView"];
+			_overflowPopUpButton = [aDecoder decodeObjectForKey:@"PSMoverflowPopUpButton"];
+			_addTabButton = [aDecoder decodeObjectForKey:@"PSMaddTabButton"];
+			style = [aDecoder decodeObjectForKey:@"PSMstyle"];
 			_orientation = (PSMTabBarOrientation)[aDecoder decodeIntegerForKey:@"PSMorientation"];
 			_canCloseOnlyTab = [aDecoder decodeBoolForKey:@"PSMcanCloseOnlyTab"];
 			_disableTabClose = [aDecoder decodeBoolForKey:@"PSMdisableTabClose"];
@@ -2133,13 +2106,13 @@ static NSMutableDictionary *registeredStyleClasses;
 			_cellOptimumWidth = [aDecoder decodeIntegerForKey:@"PSMcellOptimumWidth"];
 			_currentStep = [aDecoder decodeIntegerForKey:@"PSMcurrentStep"];
 			_isHidden = [aDecoder decodeBoolForKey:@"PSMisHidden"];
-			partnerView = [[aDecoder decodeObjectForKey:@"PSMpartnerView"] retain];
+			partnerView = [aDecoder decodeObjectForKey:@"PSMpartnerView"];
 			_awakenedFromNib = [aDecoder decodeBoolForKey:@"PSMawakenedFromNib"];
-			_lastMouseDownEvent = [[aDecoder decodeObjectForKey:@"PSMlastMouseDownEvent"] retain];
+			_lastMouseDownEvent = [aDecoder decodeObjectForKey:@"PSMlastMouseDownEvent"];
 			_useOverflowMenu = [aDecoder decodeBoolForKey:@"PSMuseOverflowMenu"];
 			_automaticallyAnimates = [aDecoder decodeBoolForKey:@"PSMautomaticallyAnimates"];
 			_alwaysShowActiveTab = [aDecoder decodeBoolForKey:@"PSMalwaysShowActiveTab"];
-			delegate = [[aDecoder decodeObjectForKey:@"PSMdelegate"] retain];
+			delegate = [aDecoder decodeObjectForKey:@"PSMdelegate"];
 		}
 	}
 //	[self setTarget:self];
@@ -2301,7 +2274,7 @@ static NSMutableDictionary *registeredStyleClasses;
                                                 NSAccessibilityTabsAttribute,
                                                 NSAccessibilityValueAttribute,
                                                 nil]];
-        attributes = [[set allObjects] retain];
+        attributes = [set allObjects];
     }
     return attributes;
 }
@@ -2460,7 +2433,7 @@ static NSMutableDictionary *registeredStyleClasses;
 		labelRect.origin.y += 4.0;
 		NSMutableAttributedString *attrStr;
 		NSString *contents = @"PSMTabBarControl";
-		attrStr = [[[NSMutableAttributedString alloc] initWithString:contents] autorelease];
+		attrStr = [[NSMutableAttributedString alloc] initWithString:contents];
 		NSRange range = NSMakeRange(0, [contents length]);
 		[attrStr addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:11.0] range:range];
 		NSMutableParagraphStyle *centeredParagraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -2469,7 +2442,6 @@ static NSMutableDictionary *registeredStyleClasses;
 		[attrStr addAttribute:NSParagraphStyleAttributeName value:centeredParagraphStyle range:range];
 		[attrStr drawInRect:labelRect];
         
-        [centeredParagraphStyle release];
 		return;
 	}
 
