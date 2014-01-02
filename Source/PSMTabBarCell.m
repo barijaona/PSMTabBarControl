@@ -316,7 +316,7 @@
     PSMTabBarControl *tabBarControl = (PSMTabBarControl *)[self controlView];
     id <PSMTabStyle> tabStyle = [tabBarControl style];
 
-    if ([tabStyle respondsToSelector:@selector(objectCounterSizeForTabCell:)]) {
+    if ([tabStyle respondsToSelector:@selector(objectCounterSizeOfTabCell:)]) {
         return [tabStyle objectCounterSizeOfTabCell:self];
     } else {
         return [self _objectCounterSize];
