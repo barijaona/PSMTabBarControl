@@ -58,12 +58,9 @@
 	[toolbar setDelegate:self];
 	[toolbar setAllowsUserCustomization:YES];
 	[toolbar setAutosavesConfiguration:YES];
-	SInt32 MacVersion;
-	if(Gestalt(gestaltSystemVersion, &MacVersion) == noErr) {
-		if(MacVersion >= 0x1040) {
-			// this call is Tiger only
-			[toolbar setShowsBaselineSeparator:NO];
-		}
+	if ( NSAppKitVersionNumber >= NSAppKitVersionNumber10_4 ) {
+		// this call is Tiger or better
+		[toolbar setShowsBaselineSeparator:NO];
 	}
 	[[self window] setToolbar:toolbar];
 
