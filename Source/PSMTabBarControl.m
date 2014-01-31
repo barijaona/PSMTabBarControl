@@ -858,6 +858,12 @@ static NSMutableDictionary *registeredStyleClasses;
 		[self addSubview:_addTabButton];
 	}
 
+	CGFloat desiredTabControlHeight = kPSMTabBarControlHeight;
+	if ([[style class] respondsToSelector:@selector(desiredTabBarControlHeight)]) {
+		desiredTabControlHeight = [[style class] desiredTabBarControlHeight];
+	}
+	CGFloat heightDifference = desiredTabControlHeight - 1;
+	
 	CGFloat partnerOriginalSize, partnerOriginalOrigin, myOriginalSize, myOriginalOrigin, partnerTargetSize, partnerTargetOrigin, myTargetSize, myTargetOrigin;
 
 	// target values for partner
@@ -875,35 +881,35 @@ static NSMutableDictionary *registeredStyleClasses;
 
 		if(partnerView) {
 			// above or below me?
-			if((myOriginalOrigin - 22) > partnerOriginalOrigin) {
+			if((myOriginalOrigin - desiredTabControlHeight) > partnerOriginalOrigin) {
 				// partner is below me
 				if(_isHidden) {
 					// I'm shrinking
-					myTargetOrigin = myOriginalOrigin + 21;
-					myTargetSize = myOriginalSize - 21;
+					myTargetOrigin = myOriginalOrigin + heightDifference;
+					myTargetSize = myOriginalSize - heightDifference;
 					partnerTargetOrigin = partnerOriginalOrigin;
-					partnerTargetSize = partnerOriginalSize + 21;
+					partnerTargetSize = partnerOriginalSize + heightDifference;
 				} else {
 					// I'm growing
-					myTargetOrigin = myOriginalOrigin - 21;
-					myTargetSize = myOriginalSize + 21;
+					myTargetOrigin = myOriginalOrigin - heightDifference;
+					myTargetSize = myOriginalSize + heightDifference;
 					partnerTargetOrigin = partnerOriginalOrigin;
-					partnerTargetSize = partnerOriginalSize - 21;
+					partnerTargetSize = partnerOriginalSize - heightDifference;
 				}
 			} else {
 				// partner is above me
 				if(_isHidden) {
 					// I'm shrinking
 					myTargetOrigin = myOriginalOrigin;
-					myTargetSize = myOriginalSize - 21;
-					partnerTargetOrigin = partnerOriginalOrigin - 21;
-					partnerTargetSize = partnerOriginalSize + 21;
+					myTargetSize = myOriginalSize - heightDifference;
+					partnerTargetOrigin = partnerOriginalOrigin - heightDifference;
+					partnerTargetSize = partnerOriginalSize + heightDifference;
 				} else {
 					// I'm growing
 					myTargetOrigin = myOriginalOrigin;
-					myTargetSize = myOriginalSize + 21;
-					partnerTargetOrigin = partnerOriginalOrigin + 21;
-					partnerTargetSize = partnerOriginalSize - 21;
+					myTargetSize = myOriginalSize + heightDifference;
+					partnerTargetOrigin = partnerOriginalOrigin + heightDifference;
+					partnerTargetSize = partnerOriginalSize - heightDifference;
 				}
 			}
 		} else {
@@ -911,15 +917,15 @@ static NSMutableDictionary *registeredStyleClasses;
 			if(_isHidden) {
 				// I'm shrinking
 				myTargetOrigin = myOriginalOrigin;
-				myTargetSize = myOriginalSize - 21;
-				partnerTargetOrigin = partnerOriginalOrigin + 21;
-				partnerTargetSize = partnerOriginalSize - 21;
+				myTargetSize = myOriginalSize - heightDifference;
+				partnerTargetOrigin = partnerOriginalOrigin + heightDifference;
+				partnerTargetSize = partnerOriginalSize - heightDifference;
 			} else {
 				// I'm growing
 				myTargetOrigin = myOriginalOrigin;
-				myTargetSize = myOriginalSize + 21;
-				partnerTargetOrigin = partnerOriginalOrigin - 21;
-				partnerTargetSize = partnerOriginalSize + 21;
+				myTargetSize = myOriginalSize + heightDifference;
+				partnerTargetOrigin = partnerOriginalOrigin - heightDifference;
+				partnerTargetSize = partnerOriginalSize + heightDifference;
 			}
 		}
 	} else {   /* vertical */
@@ -1868,6 +1874,12 @@ static NSMutableDictionary *registeredStyleClasses;
 - (void)windowDidUpdate:(NSNotification *)notification {
 	// hide? must readjust things if I'm not supposed to be showing
 	// this block of code only runs when the app launches
+	CGFloat desiredTabControlHeight = kPSMTabBarControlHeight;
+	if ([[style class] respondsToSelector:@selector(desiredTabBarControlHeight)]) {
+		desiredTabControlHeight = [[style class] desiredTabBarControlHeight];
+	}
+	CGFloat heightDifference = desiredTabControlHeight - 1;
+
 	if([self hideForSingleTab] && ([_cells count] <= 1) && !_awakenedFromNib) {
 		// must adjust frames now before display
 		NSRect myFrame = [self frame];
@@ -1875,22 +1887,22 @@ static NSMutableDictionary *registeredStyleClasses;
 			if(partnerView) {
 				NSRect partnerFrame = [partnerView frame];
 				// above or below me?
-				if(myFrame.origin.y - 22 > [partnerView frame].origin.y) {
+				if(myFrame.origin.y - desiredTabControlHeight > [partnerView frame].origin.y) {
 					// partner is below me
-					[self setFrame:NSMakeRect(myFrame.origin.x, myFrame.origin.y + 21, myFrame.size.width, myFrame.size.height - 21)];
-					[partnerView setFrame:NSMakeRect(partnerFrame.origin.x, partnerFrame.origin.y, partnerFrame.size.width, partnerFrame.size.height + 21)];
+					[self setFrame:NSMakeRect(myFrame.origin.x, myFrame.origin.y + heightDifference, myFrame.size.width, myFrame.size.height - heightDifference)];
+					[partnerView setFrame:NSMakeRect(partnerFrame.origin.x, partnerFrame.origin.y, partnerFrame.size.width, partnerFrame.size.height + heightDifference)];
 				} else {
 					// partner is above me
-					[self setFrame:NSMakeRect(myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height - 21)];
-					[partnerView setFrame:NSMakeRect(partnerFrame.origin.x, partnerFrame.origin.y - 21, partnerFrame.size.width, partnerFrame.size.height + 21)];
+					[self setFrame:NSMakeRect(myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height - heightDifference)];
+					[partnerView setFrame:NSMakeRect(partnerFrame.origin.x, partnerFrame.origin.y - heightDifference, partnerFrame.size.width, partnerFrame.size.height + heightDifference)];
 				}
 				[partnerView setNeedsDisplay:YES];
 				[self setNeedsDisplay:YES];
 			} else {
 				// for window movement
 				NSRect windowFrame = [[self window] frame];
-				[[self window] setFrame:NSMakeRect(windowFrame.origin.x, windowFrame.origin.y + 21, windowFrame.size.width, windowFrame.size.height - 21) display:YES];
-				[self setFrame:NSMakeRect(myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height - 21)];
+				[[self window] setFrame:NSMakeRect(windowFrame.origin.x, windowFrame.origin.y + heightDifference, windowFrame.size.width, windowFrame.size.height - heightDifference) display:YES];
+				[self setFrame:NSMakeRect(myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height - heightDifference)];
 			}
 		} else {
 			if(partnerView) {
