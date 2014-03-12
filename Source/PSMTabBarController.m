@@ -512,6 +512,8 @@ static NSInteger potentialMinimumForArray(NSArray *array, NSInteger minimum){
 				tabState |= PSMTab_PositionLeftMask;
 			} else if(i == [widths count] - 1) {
 				tabState |= PSMTab_PositionRightMask;
+			} else {
+				tabState |= PSMTab_PositionMiddleMask;
 			}
 
 			[cell setTabState:tabState];
