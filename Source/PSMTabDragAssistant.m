@@ -785,7 +785,7 @@ static PSMTabDragAssistant *sharedDragAssistant = nil;
 	for(i = cellCount; i > 0; i--) {
 		PSMTabBarCell *cell = [[tabBarControl cells] objectAtIndex:i-1];
 		if([cell isPlaceholder]) {
-			[tabBarControl removeTabForCell:cell];
+			[tabBarControl removeCellAtIndex:i-1];
 		}
 	}
 	// redraw
