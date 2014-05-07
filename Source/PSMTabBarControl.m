@@ -1964,13 +1964,18 @@ static NSMutableDictionary *registeredStyleClasses;
 			id tempDelegate = [aTabView delegate];
 			[aTabView setDelegate:nil];
 
+			PSMTabBarCell *lastVisibleCell = self.lastVisibleTab;
+			NSUInteger *lastVisibleCellIndex = [self.cells indexOfObject:lastVisibleCell];
+
 			// move it all around first
 			[aTabView removeTabViewItem:tabViewItem];
-			[aTabView insertTabViewItem:tabViewItem atIndex:0];
+			[aTabView insertTabViewItem:tabViewItem atIndex:lastVisibleCellIndex];
+
             [self removeCellAtIndex:(NSUInteger)tabIndex];
-            [self insertCell:thisCell atIndex:0];
+			[self insertCell:thisCell atIndex:lastVisibleCellIndex];
+
 			[thisCell setIsInOverflowMenu:NO];                  //very important else we get a fun recursive loop going
-			[[_cells objectAtIndex:[_cells count] - 1] setIsInOverflowMenu:YES];             //these 2 lines are pretty uncool and this logic needs to be updated
+			[lastVisibleCell setIsInOverflowMenu:YES];			// now the former lastVisible Cell goes into the overflow popup
 
 			[aTabView setDelegate:tempDelegate];
 
