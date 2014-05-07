@@ -1280,9 +1280,9 @@ static NSMutableDictionary *registeredStyleClasses;
 		[[NSRunLoop currentRunLoop] addTimer:_animationTimer forMode:NSEventTrackingRunLoopMode];
 		[self _animateCells:_animationTimer];
 	} else {
-		for(NSInteger i = 0; i < [_cells count]; i++) {
+		for(NSUInteger i = 0; i < [_cells count]; i++) {
 			currentCell = [_cells objectAtIndex:i];
-			[currentCell setFrame:[_controller cellFrameAtIndex:i]];
+			[currentCell setFrame:[_controller cellFrameAtIndex:(NSInteger)i]];
 		}
 
 		[_addTabButton setFrame:[self addTabButtonRect]];
@@ -1296,11 +1296,11 @@ static NSMutableDictionary *registeredStyleClasses;
 	NSAnimation *animation = [[timer userInfo] objectAtIndex:1];
 	NSArray *targetFrames = [[timer userInfo] objectAtIndex:0];
 	PSMTabBarCell *currentCell;
-	NSInteger cellCount = [_cells count];
+	NSUInteger cellCount = [_cells count];
 
 	if((cellCount > 0) && [animation isAnimating]) {
 		//compare our target position with the current position and move towards the target
-		for(NSInteger i = 0; i < [targetFrames count] && i < cellCount; i++) {
+		for(NSUInteger i = 0; i < [targetFrames count] && i < cellCount; i++) {
 			currentCell = [_cells objectAtIndex:i];
 			NSRect cellFrame = [currentCell frame], targetFrame = [[targetFrames objectAtIndex:i] rectValue];
 			CGFloat sizeChange;
@@ -1337,7 +1337,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	} else {
 		//put all the cells where they should be in their final position
 		if(cellCount > 0) {
-			for(NSInteger i = 0; i < [targetFrames count] && i < cellCount; i++) {
+			for(NSUInteger i = 0; i < [targetFrames count] && i < cellCount; i++) {
 				PSMTabBarCell *currentCell = [_cells objectAtIndex:i];
 				NSRect cellFrame = [currentCell frame], targetFrame = [[targetFrames objectAtIndex:i] rectValue];
 
@@ -1420,7 +1420,7 @@ static NSMutableDictionary *registeredStyleClasses;
     // recreate tracking areas and tool tip rects
     NSPoint mouseLocation = [self convertPoint:[[self window] convertScreenToBase:[NSEvent mouseLocation]] fromView:nil];
     
-    NSUInteger cellIndex = 0;
+    NSInteger cellIndex = 0;
     for (PSMTabBarCell *aCell in _cells) {
     
         if ([aCell isInOverflowMenu])
@@ -1958,7 +1958,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	NSInteger tabIndex = [aTabView indexOfTabViewItem:tabViewItem];
 
 	if([_cells count] > 0 && tabIndex < [_cells count]) {
-		PSMTabBarCell *thisCell = [_cells objectAtIndex:tabIndex];
+		PSMTabBarCell *thisCell = [_cells objectAtIndex:(NSUInteger)tabIndex];
 		if(_alwaysShowActiveTab && [thisCell isInOverflowMenu]) {
 			//temporarily disable the delegate in order to move the tab to a different index
 			id tempDelegate = [aTabView delegate];
@@ -1967,7 +1967,7 @@ static NSMutableDictionary *registeredStyleClasses;
 			// move it all around first
 			[aTabView removeTabViewItem:tabViewItem];
 			[aTabView insertTabViewItem:tabViewItem atIndex:0];
-            [self removeCellAtIndex:tabIndex];
+            [self removeCellAtIndex:(NSUInteger)tabIndex];
             [self insertCell:thisCell atIndex:0];
 			[thisCell setIsInOverflowMenu:NO];                  //very important else we get a fun recursive loop going
 			[[_cells objectAtIndex:[_cells count] - 1] setIsInOverflowMenu:YES];             //these 2 lines are pretty uncool and this logic needs to be updated
@@ -2221,7 +2221,7 @@ static NSMutableDictionary *registeredStyleClasses;
 		return nil;
 	}
 
-	NSInteger i, cnt = [_cells count];
+	NSUInteger i, cnt = [_cells count];
 	for(i = 0; i < cnt; i++) {
 		PSMTabBarCell *cell = [_cells objectAtIndex:i];
 
@@ -2236,7 +2236,7 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 - (PSMTabBarCell *)lastVisibleTab {
-	NSInteger i, cellCount = [_cells count];
+	NSUInteger i, cellCount = [_cells count];
 	for(i = 0; i < cellCount; i++) {
 		if([[_cells objectAtIndex:i] isInOverflowMenu]) {
             if (i == 0)
@@ -2251,8 +2251,8 @@ static NSMutableDictionary *registeredStyleClasses;
         return nil;
 }
 
-- (NSInteger)numberOfVisibleTabs {
-	NSInteger i, cellCount = 0;
+- (NSUInteger)numberOfVisibleTabs {
+	NSUInteger i, cellCount = 0;
 	PSMTabBarCell *nextCell;
 
 	for(i = 0; i < [_cells count]; i++) {
