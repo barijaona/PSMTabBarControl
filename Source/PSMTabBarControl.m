@@ -12,6 +12,7 @@
 #import "PSMRolloverButton.h"
 #import "PSMTabStyle.h"
 #import "PSMMetalTabStyle.h"
+#import "PSMTexturedMetalTabStyle.h"
 #import "PSMAquaTabStyle.h"
 #import "PSMUnifiedTabStyle.h"
 #import "PSMAdiumTabStyle.h"
@@ -351,6 +352,7 @@ static NSMutableDictionary *registeredStyleClasses;
     [self registerTabStyleClass:[PSMUnifiedTabStyle class]];
     [self registerTabStyleClass:[PSMAdiumTabStyle class]];
     [self registerTabStyleClass:[PSMMetalTabStyle class]];
+    [self registerTabStyleClass:[PSMTexturedMetalTabStyle class]];
     [self registerTabStyleClass:[PSMCardTabStyle class]];
     [self registerTabStyleClass:[PSMLiveChatTabStyle class]];
 }

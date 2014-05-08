@@ -160,8 +160,8 @@
     PSMTabBarControl *tabBarControl = (PSMTabBarControl *)[self controlView];
     id <PSMTabStyle> tabStyle = [tabBarControl style];
 
-    if ([tabStyle respondsToSelector:@selector(attributedStringValueForTabCell:)])
-        return [tabStyle attributedStringValueForTabCell:self];
+    if ([tabStyle respondsToSelector:@selector(attributedStringValueForTabCell:inTabBarControl:)])
+        return [tabStyle attributedStringValueForTabCell:self inTabBarControl:tabBarControl];
     else
         return [self _attributedStringValue];
 }

@@ -319,7 +319,7 @@
 	return [[NSMutableAttributedString alloc] initWithString:contents attributes:_objectCountStringAttributes];
 }
 
-- (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell {
+- (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell inTabBarControl:(PSMTabBarControl *)tabBarControl {
 	NSMutableAttributedString *attrStr;
 	NSString * contents = [cell title];
 	attrStr = [[NSMutableAttributedString alloc] initWithString:contents];
