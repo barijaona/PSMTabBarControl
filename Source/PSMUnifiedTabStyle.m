@@ -119,7 +119,7 @@
     NSToolbar *toolbar = [window toolbar];
     
 	NSBezierPath *bezier = [NSBezierPath bezierPath];
-	NSColor *lineColor = [NSColor colorWithCalibratedWhite:0.576 alpha:1.0];
+	NSColor *lineColor = [NSColor colorWithCalibratedWhite:0.200 alpha:1.0];
     
     if (toolbar && [toolbar isVisible]) {
 
@@ -155,7 +155,11 @@
                 NSColor *endColor = [NSColor colorWithDeviceWhite:0.8 alpha:1.000];
                 NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:startColor endingColor:endColor];
                 [gradient drawInBezierPath:bezier angle:80.0];
-            }
+            } else {
+                [lineColor set];
+                [NSBezierPath strokeLineFromPoint:NSMakePoint(aRect.origin.x, NSMinY(aRect) + 0.5)
+                 toPoint:NSMakePoint(NSMaxX(aRect), NSMinY(aRect) + 0.5)];
+         }
             
         } else {
             if ([cell state] == NSOnState) {
@@ -232,7 +236,7 @@
         [gradient drawInRect:gradientRect angle:90.0];
     }
 
-	[[NSColor colorWithCalibratedWhite:0.576 alpha:1.0] set];
+	[[NSColor colorWithCalibratedWhite:0.200 alpha:1.0] set];
 	[NSBezierPath strokeLineFromPoint:NSMakePoint(rect.origin.x, NSMinY(rect) + 0.5)
 	 toPoint:NSMakePoint(NSMaxX(rect), NSMinY(rect) + 0.5)];
 }
