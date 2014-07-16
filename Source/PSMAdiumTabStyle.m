@@ -36,7 +36,7 @@
 #pragma mark -
 #pragma mark Creation/Destruction
 
-- (id)init {
+- (instancetype)init {
 	if((self = [super init])) {
 		[self loadImages];
 		_drawsUnified = NO;
@@ -777,7 +777,7 @@
 	}
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
 	if((self = [super init])) {
 		if([aDecoder allowsKeyedCoding]) {
 			_closeButton = [aDecoder decodeObjectForKey:@"closeButton"];

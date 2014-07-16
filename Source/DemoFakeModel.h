@@ -26,6 +26,6 @@
 @property (assign) BOOL isEdited;
 
 // designated initializer
-- (id)init;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 @end

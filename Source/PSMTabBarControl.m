@@ -260,12 +260,12 @@ static NSMutableDictionary *registeredStyleClasses;
 	}
 }
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
 	self = [super initWithFrame:frame];
 	if(self) {
 		// Initialization
 		[self initAddedProperties];
-		[self registerForDraggedTypes:[NSArray arrayWithObjects:@"PSMTabBarControlItemPBType", nil]];
+		[self registerForDraggedTypes:@[@"PSMTabBarControlItemPBType"]];
 
 		// resize
 		[self setPostsFrameChangedNotifications:YES];
@@ -358,7 +358,7 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 + (void)registerTabStyleClass:(Class <PSMTabStyle>)aStyleClass {
-    [registeredStyleClasses setObject:aStyleClass forKey:[aStyleClass name]];
+    registeredStyleClasses[[aStyleClass name]] = aStyleClass;
 }
 
 + (void)unregisterTabStyleClass:(Class <PSMTabStyle>)aStyleClass {
@@ -370,7 +370,7 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 + (Class <PSMTabStyle>)registeredClassForStyleName:(NSString *)name {
-    return [registeredStyleClasses objectForKey:name];
+    return registeredStyleClasses[name];
 }
 
 #pragma mark -
@@ -399,7 +399,7 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 -(void)replaceObjectInCellsAtIndex:(NSUInteger)anIndex withObject:(PSMTabBarCell *)aCell {
-    [_cells replaceObjectAtIndex:anIndex withObject:aCell];
+    _cells[anIndex] = aCell;
 }
 
 -(void)replaceCellsAtIndexes:(NSIndexSet *)indexes withCells:(NSArray *)cellArray {
@@ -816,12 +816,12 @@ static NSMutableDictionary *registeredStyleClasses;
 
     // did the tab's identifier change?
     } else if([keyPath isEqualToString:@"identifier"]) {
-        id oldIdentifier = [change objectForKey: NSKeyValueChangeOldKey];
+        id oldIdentifier = change[NSKeyValueChangeOldKey];
         
         for (PSMTabBarCell *cell in _cells) {
             if([cell representedObject] == object) {
                 // unbind the old value first
-                NSArray *selectors = [NSArray arrayWithObjects: @"isProcessing", @"icon", @"objectCount", @"countColor", @"largeImage", @"isEdited", nil];
+                NSArray *selectors = @[@"isProcessing", @"icon", @"objectCount", @"countColor", @"largeImage", @"isEdited"];
                 for (NSString *selector in selectors) {
                     if([oldIdentifier respondsToSelector: NSSelectorFromString(selector)]) {
                         [oldIdentifier unbind: selector];
@@ -1000,7 +1000,7 @@ static NSMutableDictionary *registeredStyleClasses;
 		}
 	}
 
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:myOriginalOrigin], @"myOriginalOrigin", [NSNumber numberWithDouble:partnerOriginalOrigin], @"partnerOriginalOrigin", [NSNumber numberWithDouble:myOriginalSize], @"myOriginalSize", [NSNumber numberWithDouble:partnerOriginalSize], @"partnerOriginalSize", [NSNumber numberWithDouble:myTargetOrigin], @"myTargetOrigin", [NSNumber numberWithDouble:partnerTargetOrigin], @"partnerTargetOrigin", [NSNumber numberWithDouble:myTargetSize], @"myTargetSize", [NSNumber numberWithDouble:partnerTargetSize], @"partnerTargetSize", nil];
+	NSDictionary *userInfo = @{@"myOriginalOrigin": @(myOriginalOrigin), @"partnerOriginalOrigin": @(partnerOriginalOrigin), @"myOriginalSize": @(myOriginalSize), @"partnerOriginalSize": @(partnerOriginalSize), @"myTargetOrigin": @(myTargetOrigin), @"partnerTargetOrigin": @(partnerTargetOrigin), @"myTargetSize": @(myTargetSize), @"partnerTargetSize": @(partnerTargetSize)};
 	if(_showHideAnimationTimer) {
 		[_showHideAnimationTimer invalidate];
 	}
@@ -1011,10 +1011,10 @@ static NSMutableDictionary *registeredStyleClasses;
 	// moves the frame of the tab bar and window (or partner view) linearly to hide or show the tab bar
 	NSRect myFrame = [self frame];
 	NSDictionary *userInfo = [timer userInfo];
-	CGFloat myCurrentOrigin = ([[userInfo objectForKey:@"myOriginalOrigin"] doubleValue] + (([[userInfo objectForKey:@"myTargetOrigin"] doubleValue] - [[userInfo objectForKey:@"myOriginalOrigin"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
-	CGFloat myCurrentSize = ([[userInfo objectForKey:@"myOriginalSize"] doubleValue] + (([[userInfo objectForKey:@"myTargetSize"] doubleValue] - [[userInfo objectForKey:@"myOriginalSize"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
-	CGFloat partnerCurrentOrigin = ([[userInfo objectForKey:@"partnerOriginalOrigin"] doubleValue] + (([[userInfo objectForKey:@"partnerTargetOrigin"] doubleValue] - [[userInfo objectForKey:@"partnerOriginalOrigin"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
-	CGFloat partnerCurrentSize = ([[userInfo objectForKey:@"partnerOriginalSize"] doubleValue] + (([[userInfo objectForKey:@"partnerTargetSize"] doubleValue] - [[userInfo objectForKey:@"partnerOriginalSize"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
+	CGFloat myCurrentOrigin = ([userInfo[@"myOriginalOrigin"] doubleValue] + (([userInfo[@"myTargetOrigin"] doubleValue] - [userInfo[@"myOriginalOrigin"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
+	CGFloat myCurrentSize = ([userInfo[@"myOriginalSize"] doubleValue] + (([userInfo[@"myTargetSize"] doubleValue] - [userInfo[@"myOriginalSize"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
+	CGFloat partnerCurrentOrigin = ([userInfo[@"partnerOriginalOrigin"] doubleValue] + (([userInfo[@"partnerTargetOrigin"] doubleValue] - [userInfo[@"partnerOriginalOrigin"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
+	CGFloat partnerCurrentSize = ([userInfo[@"partnerOriginalSize"] doubleValue] + (([userInfo[@"partnerTargetSize"] doubleValue] - [userInfo[@"partnerOriginalSize"] doubleValue]) * (_currentStep / kPSMHideAnimationSteps)));
 
 	NSRect myNewFrame;
 	if([self orientation] == PSMTabBarHorizontalOrientation) {
@@ -1276,13 +1276,13 @@ static NSMutableDictionary *registeredStyleClasses;
 		_animationTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 / 30.0
 							target:self
 							selector:@selector(_animateCells:)
-							userInfo:[NSArray arrayWithObjects:targetFrames, animation, nil]
+							userInfo:@[targetFrames, animation]
 							repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:_animationTimer forMode:NSEventTrackingRunLoopMode];
 		[self _animateCells:_animationTimer];
 	} else {
 		for(NSUInteger i = 0; i < [_cells count]; i++) {
-			currentCell = [_cells objectAtIndex:i];
+			currentCell = _cells[i];
 			[currentCell setFrame:[_controller cellFrameAtIndex:(NSInteger)i]];
 		}
 
@@ -1295,16 +1295,16 @@ static NSMutableDictionary *registeredStyleClasses;
 }
 
 - (void)_animateCells:(NSTimer *)timer {
-	NSAnimation *animation = [[timer userInfo] objectAtIndex:1];
-	NSArray *targetFrames = [[timer userInfo] objectAtIndex:0];
+	NSAnimation *animation = [timer userInfo][1];
+	NSArray *targetFrames = [timer userInfo][0];
 	PSMTabBarCell *currentCell;
 	NSUInteger cellCount = [_cells count];
 
 	if((cellCount > 0) && [animation isAnimating]) {
 		//compare our target position with the current position and move towards the target
 		for(NSUInteger i = 0; i < [targetFrames count] && i < cellCount; i++) {
-			currentCell = [_cells objectAtIndex:i];
-			NSRect cellFrame = [currentCell frame], targetFrame = [[targetFrames objectAtIndex:i] rectValue];
+			currentCell = _cells[i];
+			NSRect cellFrame = [currentCell frame], targetFrame = [targetFrames[i] rectValue];
 			CGFloat sizeChange;
 			CGFloat originChange;
 
@@ -1340,8 +1340,8 @@ static NSMutableDictionary *registeredStyleClasses;
 		//put all the cells where they should be in their final position
 		if(cellCount > 0) {
 			for(NSUInteger i = 0; i < [targetFrames count] && i < cellCount; i++) {
-				PSMTabBarCell *currentCell = [_cells objectAtIndex:i];
-				NSRect cellFrame = [currentCell frame], targetFrame = [[targetFrames objectAtIndex:i] rectValue];
+				PSMTabBarCell *currentCell = _cells[i];
+				NSRect cellFrame = [currentCell frame], targetFrame = [targetFrames[i] rectValue];
 
 				if([self orientation] == PSMTabBarHorizontalOrientation) {
 					cellFrame.size.width = targetFrame.size.width;
@@ -1429,7 +1429,7 @@ static NSMutableDictionary *registeredStyleClasses;
         if ([aCell isInOverflowMenu])
             break;
     
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:cellIndex], @"cellIndex", aCell, @"cell", nil];
+        NSDictionary *userInfo = @{@"cellIndex": @(cellIndex), @"cell": aCell};
         [aCell addTrackingAreasForView:self inRect:[aCell frame] withUserInfo:userInfo mouseLocation:mouseLocation];
 
         [self addToolTipRect:[aCell frame] owner:self userData:nil];
@@ -1442,7 +1442,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
     if ([[theEvent trackingArea] owner] == self) {
         NSDictionary *userInfo = [theEvent userData];
-        PSMTabBarCell *tabBarCell = [userInfo objectForKey:@"cell"];
+        PSMTabBarCell *tabBarCell = userInfo[@"cell"];
         if (tabBarCell)
             [tabBarCell mouseEntered:theEvent];    
     }
@@ -1453,7 +1453,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
     if ([[theEvent trackingArea] owner] == self) {
         NSDictionary *userInfo = [theEvent userData];
-        PSMTabBarCell *tabBarCell = [userInfo objectForKey:@"cell"];
+        PSMTabBarCell *tabBarCell = userInfo[@"cell"];
         if (tabBarCell)
             [tabBarCell mouseExited:theEvent];
     }
@@ -1961,7 +1961,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	NSInteger tabIndex = [aTabView indexOfTabViewItem:tabViewItem];
 
 	if([_cells count] > 0 && tabIndex < [_cells count]) {
-		PSMTabBarCell *thisCell = [_cells objectAtIndex:(NSUInteger)tabIndex];
+		PSMTabBarCell *thisCell = _cells[(NSUInteger)tabIndex];
 		if(_alwaysShowActiveTab && [thisCell isInOverflowMenu]) {
 			//temporarily disable the delegate in order to move the tab to a different index
 			id tempDelegate = [aTabView delegate];
@@ -2095,13 +2095,13 @@ static NSMutableDictionary *registeredStyleClasses;
 	}
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder 
 {
 	self = [super initWithCoder:aDecoder];
 	if (self) {
 		// Initialization
 		[self initAddedProperties];
-		[self registerForDraggedTypes:[NSArray arrayWithObjects:@"PSMTabBarControlItemPBType", nil]];
+		[self registerForDraggedTypes:@[@"PSMTabBarControlItemPBType"]];
 		
 		// resize
 		[self setPostsFrameChangedNotifications:YES];
@@ -2155,7 +2155,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	if([item identifier] != nil) {
 		if([[[cell representedObject] identifier] respondsToSelector:@selector(isProcessing)]) {
 			NSMutableDictionary *bindingOptions = [NSMutableDictionary dictionary];
-			[bindingOptions setObject:NSNegateBooleanTransformerName forKey:@"NSValueTransformerName"];
+			bindingOptions[@"NSValueTransformerName"] = NSNegateBooleanTransformerName;
 			[[cell indicator] bind:@"animate" toObject:[item identifier] withKeyPath:@"isProcessing" options:nil];
 			[[cell indicator] bind:@"hidden" toObject:[item identifier] withKeyPath:@"isProcessing" options:bindingOptions];
 			[[item identifier] addObserver:cell forKeyPath:@"isProcessing" options:0 context:nil];
@@ -2167,7 +2167,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	if([item identifier] != nil) {
 		if([[[cell representedObject] identifier] respondsToSelector:@selector(icon)]) {
 			NSMutableDictionary *bindingOptions = [NSMutableDictionary dictionary];
-			[bindingOptions setObject:NSIsNotNilTransformerName forKey:@"NSValueTransformerName"];
+			bindingOptions[@"NSValueTransformerName"] = NSIsNotNilTransformerName;
 			[cell bind:@"hasIcon" toObject:[item identifier] withKeyPath:@"icon" options:bindingOptions];
 			[[item identifier] addObserver:cell forKeyPath:@"icon" options:0 context:nil];
 		}
@@ -2196,7 +2196,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	if([item identifier] != nil) {
 		if([[[cell representedObject] identifier] respondsToSelector:@selector(largeImage)]) {
 			NSMutableDictionary *bindingOptions = [NSMutableDictionary dictionary];
-			[bindingOptions setObject:NSIsNotNilTransformerName forKey:@"NSValueTransformerName"];
+			bindingOptions[@"NSValueTransformerName"] = NSIsNotNilTransformerName;
 			[cell bind:@"hasLargeImage" toObject:[item identifier] withKeyPath:@"largeImage" options:bindingOptions];
 			[[item identifier] addObserver:cell forKeyPath:@"largeImage" options:0 context:nil];
 		}
@@ -2231,7 +2231,7 @@ static NSMutableDictionary *registeredStyleClasses;
 
 	NSUInteger i, cnt = [_cells count];
 	for(i = 0; i < cnt; i++) {
-		PSMTabBarCell *cell = [_cells objectAtIndex:i];
+		PSMTabBarCell *cell = _cells[i];
 
 		if(NSPointInRect(point, [cell frame])) {
 			if(outFrame) {
@@ -2246,15 +2246,15 @@ static NSMutableDictionary *registeredStyleClasses;
 - (PSMTabBarCell *)lastVisibleTab {
 	NSUInteger i, cellCount = [_cells count];
 	for(i = 0; i < cellCount; i++) {
-		if([[_cells objectAtIndex:i] isInOverflowMenu]) {
+		if([_cells[i] isInOverflowMenu]) {
             if (i == 0)
                 return nil;
             else
-                return [_cells objectAtIndex:(i - 1)];
+                return _cells[(i - 1)];
 		}
 	}
     if (cellCount > 0)
-        return [_cells objectAtIndex:(cellCount - 1)];
+        return _cells[(cellCount - 1)];
     else
         return nil;
 }
@@ -2264,7 +2264,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	PSMTabBarCell *nextCell;
 
 	for(i = 0; i < [_cells count]; i++) {
-		nextCell = [_cells objectAtIndex:i];
+		nextCell = _cells[i];
 
 		if([nextCell isInOverflowMenu]) {
 			break;
@@ -2290,10 +2290,8 @@ static NSMutableDictionary *registeredStyleClasses;
     static NSArray *attributes = nil;
     if (!attributes) {
         NSSet *set = [NSSet setWithArray:[super accessibilityAttributeNames]];
-        set = [set setByAddingObjectsFromArray:[NSArray arrayWithObjects:
-                                                NSAccessibilityTabsAttribute,
-                                                NSAccessibilityValueAttribute,
-                                                nil]];
+        set = [set setByAddingObjectsFromArray:@[NSAccessibilityTabsAttribute,
+                                                NSAccessibilityValueAttribute]];
         attributes = [set allObjects];
     }
     return attributes;

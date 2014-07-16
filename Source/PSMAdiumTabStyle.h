@@ -26,6 +26,8 @@
 	BOOL					_drawsRight;
 }
 
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+
 - (void)loadImages;
 
 - (BOOL)drawsUnified;
@@ -34,6 +36,6 @@
 - (void)setDrawsRight:(BOOL)value;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder;
-- (id)initWithCoder:(NSCoder *)aDecoder;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 @end

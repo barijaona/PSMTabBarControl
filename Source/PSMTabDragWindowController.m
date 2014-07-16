@@ -12,7 +12,18 @@
 
 @implementation PSMTabDragWindowController
 
-- (id)initWithImage:(NSImage *)image styleMask:(NSUInteger)styleMask tearOffStyle:(PSMTabBarTearOffStyle)tearOffStyle {
+-  (instancetype)initWithWindow:(NSWindow *)window {
+    self = [super initWithWindow:window];
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    return self;
+}
+
+- (instancetype)initWithImage:(NSImage *)image styleMask:(NSUInteger)styleMask tearOffStyle:(PSMTabBarTearOffStyle)tearOffStyle {
 	PSMTabDragWindow *window = [PSMTabDragWindow dragWindowWithImage:image styleMask:styleMask];
 	if((self = [super initWithWindow:window])) {
 		_view = [window dragView];

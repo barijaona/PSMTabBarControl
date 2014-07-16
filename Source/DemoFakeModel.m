@@ -19,7 +19,7 @@
 @synthesize objectCount = _objectCount;
 @synthesize isEdited = _isEdited;
 
-- (id)init {
+- (instancetype)init {
 	if((self = [super init])) {
 		_isProcessing = NO;
 		_icon = nil;

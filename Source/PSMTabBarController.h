@@ -17,7 +17,7 @@
 	NSMenu				*_overflowMenu;
 }
 
-- (id)initWithTabBarControl:(PSMTabBarControl *)control;
+- (instancetype)initWithTabBarControl:(PSMTabBarControl *)control NS_DESIGNATED_INITIALIZER;
 
 - (NSMenu *)overflowMenu;
 - (NSRect)cellFrameAtIndex:(NSInteger)index;

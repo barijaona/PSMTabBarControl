@@ -15,6 +15,6 @@
 }
 + (PSMTabDragWindow *)dragWindowWithImage:(NSImage *)image styleMask:(NSUInteger)styleMask;
 
-- (id)initWithImage:(NSImage *)image styleMask:(NSUInteger)styleMask;
+- (instancetype)initWithImage:(NSImage *)image styleMask:(NSUInteger)styleMask NS_DESIGNATED_INITIALIZER;
 - (PSMTabDragView *)dragView;
 @end

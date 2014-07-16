@@ -120,7 +120,7 @@
 }
 
 - (void)stopProcessing:(id)sender {
-	[[[tabView selectedTabViewItem] identifier] setValue:[NSNumber numberWithBool:NO] forKeyPath:@"isProcessing"];
+	[[[tabView selectedTabViewItem] identifier] setValue:@NO forKeyPath:@"isProcessing"];
 }
 
 - (void)setIconNamed:(id)sender {
@@ -136,7 +136,7 @@
 }
 
 - (void)setObjectCount:(id)sender {
-	[[[tabView selectedTabViewItem] identifier] setValue:[NSNumber numberWithInteger:[sender integerValue]] forKeyPath:@"objectCount"];
+	[[[tabView selectedTabViewItem] identifier] setValue:@([sender integerValue]) forKeyPath:@"objectCount"];
 }
 
 - (IBAction)isProcessingAction:(id)sender {
@@ -265,7 +265,7 @@
 
 	[tabBar setCellMinWidth:[sender integerValue]];
 
-	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:[sender integerValue]]
+	[[NSUserDefaults standardUserDefaults] setObject:@([sender integerValue])
 	 forKey:@"TabMinWidth"];
 }
 
@@ -278,7 +278,7 @@
 
 	[tabBar setCellMaxWidth:[sender integerValue]];
 
-	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:[sender integerValue]]
+	[[NSUserDefaults standardUserDefaults] setObject:@([sender integerValue])
 	 forKey:@"TabMaxWidth"];
 }
 
@@ -378,11 +378,11 @@
 }
 
 - (NSArray *)allowedDraggedTypesForTabView:(NSTabView *)aTabView {
-	return [NSArray arrayWithObjects:NSFilenamesPboardType, NSStringPboardType, nil];
+	return @[NSFilenamesPboardType, NSStringPboardType];
 }
 
 - (void)tabView:(NSTabView *)aTabView acceptedDraggingInfo:(id <NSDraggingInfo>)draggingInfo onTabViewItem:(NSTabViewItem *)tabViewItem {
-	NSLog(@"acceptedDraggingInfo: %@ onTabViewItem: %@", [[draggingInfo draggingPasteboard] stringForType:[[[draggingInfo draggingPasteboard] types] objectAtIndex:0]], [tabViewItem label]);
+	NSLog(@"acceptedDraggingInfo: %@ onTabViewItem: %@", [[draggingInfo draggingPasteboard] stringForType:[[draggingInfo draggingPasteboard] types][0]], [tabViewItem label]);
 }
 
 - (NSMenu *)tabView:(NSTabView *)aTabView menuForTabViewItem:(NSTabViewItem *)tabViewItem {
@@ -526,17 +526,15 @@
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
-	return [NSArray arrayWithObjects:@"TabField",
+	return @[@"TabField",
 			NSToolbarFlexibleSpaceItemIdentifier,
-			@"DrawerItem",
-			nil];
+			@"DrawerItem"];
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-	return [NSArray arrayWithObjects:@"TabField",
+	return @[@"TabField",
 			NSToolbarFlexibleSpaceItemIdentifier,
-			@"DrawerItem",
-			nil];
+			@"DrawerItem"];
 }
 
 - (IBAction)toggleToolbar:(id)sender {

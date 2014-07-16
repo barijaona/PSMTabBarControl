@@ -59,8 +59,8 @@ typedef enum PSMTabBarCellTrackingAreaType : NSUInteger
 @property (assign) BOOL closeButtonPressed;
 
 #pragma mark Creation/Destruction
-- (id)init;
-- (id)initPlaceholderWithFrame:(NSRect) frame expanded:(BOOL) value inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (instancetype)init;
+- (instancetype)initPlaceholderWithFrame:(NSRect) frame expanded:(BOOL) value inTabBarControl:(PSMTabBarControl *)tabBarControl;
 - (void)dealloc;
 
 #pragma mark Accessors
@@ -124,7 +124,7 @@ typedef enum PSMTabBarCellTrackingAreaType : NSUInteger
 
 #pragma mark Archiving
 - (void)encodeWithCoder:(NSCoder *)aCoder;
-- (id)initWithCoder:(NSCoder *)aDecoder;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 
 @end
 

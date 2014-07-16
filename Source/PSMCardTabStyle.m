@@ -30,7 +30,7 @@
 #pragma mark -
 #pragma mark Creation/Destruction
 
-- (id) init {
+- (instancetype) init {
     if ( (self = [super init]) ) {
         cardCloseButton = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"AquaTabClose_Front"]];
         cardCloseButtonDown = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"AquaTabClose_Front_Pressed"]];
@@ -219,7 +219,7 @@
 	// ... do not encode anything
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
 	// ... do not read anything
 	return [self init];
 }

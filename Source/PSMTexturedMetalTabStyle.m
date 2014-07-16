@@ -31,7 +31,7 @@
 #pragma mark -
 #pragma mark Creation/Destruction
 
-- (id) init {
+- (instancetype) init {
 	if((self = [super init])) {
 		metalCloseButton = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"TabClose_Front_Textured"]];
 		metalCloseButtonDown = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"TabClose_Front_Pressed_Textured"]];
@@ -385,7 +385,7 @@
 	}
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
 	// self = [super initWithCoder:aDecoder];
 	//if (self) {
 	if([aDecoder allowsKeyedCoding]) {
