@@ -20,6 +20,7 @@
 #import "PSMCardTabStyle.h"
 #import "PSMTabDragAssistant.h"
 #import "PSMTabBarController.h"
+#import "PSMSafariTabStyle.h"
 
 @interface PSMTabBarControl (/*Private*/)
 
@@ -355,6 +356,7 @@ static NSMutableDictionary *registeredStyleClasses;
     [self registerTabStyleClass:[PSMTexturedMetalTabStyle class]];
     [self registerTabStyleClass:[PSMCardTabStyle class]];
     [self registerTabStyleClass:[PSMLiveChatTabStyle class]];
+    [self registerTabStyleClass:[PSMSafariTabStyle class]];
 }
 
 + (void)registerTabStyleClass:(Class <PSMTabStyle>)aStyleClass {

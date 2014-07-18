@@ -26,6 +26,40 @@
 		0694F10E15F4EB91000FBC15 /* PSMCardTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0694F10C15F4EB90000FBC15 /* PSMCardTabStyle.m */; };
 		069DFB2915EFBDF500FB9F1C /* largeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3987D51184F19D004462EE /* largeImage.png */; };
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		267A6FCA1976C3650090F905 /* PSMSafariTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 267A6FC81976C3650090F905 /* PSMSafariTabStyle.h */; };
+		267A6FCB1976C3650090F905 /* PSMSafariTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 267A6FC91976C3650090F905 /* PSMSafariTabStyle.m */; };
+		26E0121119772A3E003793BC /* InactiveWindow_ActiveTabClose.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120319772A3E003793BC /* InactiveWindow_ActiveTabClose.tiff */; };
+		26E0121219772A3E003793BC /* InactiveWindow_ActiveTabClosePressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120419772A3E003793BC /* InactiveWindow_ActiveTabClosePressed.tiff */; };
+		26E0121319772A3E003793BC /* InactiveWindow_ActiveTabCloseRollover.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120519772A3E003793BC /* InactiveWindow_ActiveTabCloseRollover.tiff */; };
+		26E0121419772A3E003793BC /* InactiveWindow_ActiveTabFill.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120619772A3E003793BC /* InactiveWindow_ActiveTabFill.tiff */; };
+		26E0121519772A3E003793BC /* InactiveWindow_ActiveTabLeftCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120719772A3E003793BC /* InactiveWindow_ActiveTabLeftCap.tiff */; };
+		26E0121619772A3E003793BC /* InactiveWindow_ActiveTabRightCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120819772A3E003793BC /* InactiveWindow_ActiveTabRightCap.tiff */; };
+		26E0121719772A3E003793BC /* InactiveWindow_AddTabButton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120919772A3E003793BC /* InactiveWindow_AddTabButton.tiff */; };
+		26E0121919772A3E003793BC /* InactiveWindow_InactiveTabBG.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120B19772A3E003793BC /* InactiveWindow_InactiveTabBG.tiff */; };
+		26E0121A19772A3E003793BC /* InactiveWindow_InactiveTabClose.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120C19772A3E003793BC /* InactiveWindow_InactiveTabClose.tiff */; };
+		26E0121B19772A3E003793BC /* InactiveWindow_InactiveTabClosePressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120D19772A3E003793BC /* InactiveWindow_InactiveTabClosePressed.tiff */; };
+		26E0121C19772A3E003793BC /* InactiveWindow_InactiveTabCloseRollover.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120E19772A3E003793BC /* InactiveWindow_InactiveTabCloseRollover.tiff */; };
+		26E0121D19772A3E003793BC /* InactiveWindow_InactiveTabLeftCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0120F19772A3E003793BC /* InactiveWindow_InactiveTabLeftCap.tiff */; };
+		26E0121E19772A3E003793BC /* InactiveWindow_InactiveTabRightCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26E0121019772A3E003793BC /* InactiveWindow_InactiveTabRightCap.tiff */; };
+		26F59C2019770C860077DA98 /* ActiveWindow_ActiveTabClose.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0919770C860077DA98 /* ActiveWindow_ActiveTabClose.tiff */; };
+		26F59C2119770C860077DA98 /* ActiveWindow_ActiveTabClosePressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0A19770C860077DA98 /* ActiveWindow_ActiveTabClosePressed.tiff */; };
+		26F59C2219770C860077DA98 /* ActiveWindow_ActiveTabCloseRollover.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0B19770C860077DA98 /* ActiveWindow_ActiveTabCloseRollover.tiff */; };
+		26F59C2319770C860077DA98 /* ActiveWindow_ActiveTabFill.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0C19770C860077DA98 /* ActiveWindow_ActiveTabFill.tiff */; };
+		26F59C2419770C860077DA98 /* ActiveWindow_ActiveTabLeftCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0D19770C860077DA98 /* ActiveWindow_ActiveTabLeftCap.tiff */; };
+		26F59C2519770C860077DA98 /* ActiveWindow_ActiveTabRightCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0E19770C860077DA98 /* ActiveWindow_ActiveTabRightCap.tiff */; };
+		26F59C2619770C860077DA98 /* ActiveWindow_AddTabButton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C0F19770C860077DA98 /* ActiveWindow_AddTabButton.tiff */; };
+		26F59C2719770C860077DA98 /* ActiveWindow_AddTabButtonPushed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1019770C860077DA98 /* ActiveWindow_AddTabButtonPushed.tiff */; };
+		26F59C2819770C860077DA98 /* ActiveWindow_AddTabButtonRollover_Pressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1119770C860077DA98 /* ActiveWindow_AddTabButtonRollover_Pressed.tiff */; };
+		26F59C2919770C860077DA98 /* ActiveWindow_AddTabButtonRollover.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1219770C860077DA98 /* ActiveWindow_AddTabButtonRollover.tiff */; };
+		26F59C2E19770C860077DA98 /* ActiveWindow_InactiveTabBG.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1719770C860077DA98 /* ActiveWindow_InactiveTabBG.tiff */; };
+		26F59C2F19770C860077DA98 /* ActiveWindow_InactiveTabClose.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1819770C860077DA98 /* ActiveWindow_InactiveTabClose.tiff */; };
+		26F59C3019770C860077DA98 /* ActiveWindow_InactiveTabClosePressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1919770C860077DA98 /* ActiveWindow_InactiveTabClosePressed.tiff */; };
+		26F59C3119770C860077DA98 /* ActiveWindow_InactiveTabCloseRollover.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1A19770C860077DA98 /* ActiveWindow_InactiveTabCloseRollover.tiff */; };
+		26F59C3219770C860077DA98 /* ActiveWindow_InactiveTabLeftCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1B19770C860077DA98 /* ActiveWindow_InactiveTabLeftCap.tiff */; };
+		26F59C3319770C860077DA98 /* ActiveWindow_InactiveTabRightCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1C19770C860077DA98 /* ActiveWindow_InactiveTabRightCap.tiff */; };
+		26F59C3419770C860077DA98 /* ActiveWindow_Pulled_ActiveTabCenterFill.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1D19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabCenterFill.tiff */; };
+		26F59C3519770C860077DA98 /* ActiveWindow_Pulled_ActiveTabLeftCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1E19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabLeftCap.tiff */; };
+		26F59C3619770C860077DA98 /* ActiveWindow_Pulled_ActiveTabRightCap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 26F59C1F19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabRightCap.tiff */; };
 		7EB964C6191BC3E000175AF3 /* PSMTexturedMetalTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB964C4191BC3E000175AF3 /* PSMTexturedMetalTabStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB964C7191BC3E000175AF3 /* PSMTexturedMetalTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB964C5191BC3E000175AF3 /* PSMTexturedMetalTabStyle.m */; };
 		7EB964D7191BC8D800175AF3 /* TabClose_Dirty_Pressed_Textured@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EB964C8191BC8D800175AF3 /* TabClose_Dirty_Pressed_Textured@2x.png */; };
@@ -173,6 +207,40 @@
 		13F8B88807B434F6008AE28D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		13F8B88907B434F6008AE28D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		267A6FC81976C3650090F905 /* PSMSafariTabStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMSafariTabStyle.h; path = Source/PSMSafariTabStyle.h; sourceTree = "<group>"; };
+		267A6FC91976C3650090F905 /* PSMSafariTabStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSMSafariTabStyle.m; path = Source/PSMSafariTabStyle.m; sourceTree = "<group>"; };
+		26E0120319772A3E003793BC /* InactiveWindow_ActiveTabClose.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_ActiveTabClose.tiff; sourceTree = "<group>"; };
+		26E0120419772A3E003793BC /* InactiveWindow_ActiveTabClosePressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_ActiveTabClosePressed.tiff; sourceTree = "<group>"; };
+		26E0120519772A3E003793BC /* InactiveWindow_ActiveTabCloseRollover.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_ActiveTabCloseRollover.tiff; sourceTree = "<group>"; };
+		26E0120619772A3E003793BC /* InactiveWindow_ActiveTabFill.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_ActiveTabFill.tiff; sourceTree = "<group>"; };
+		26E0120719772A3E003793BC /* InactiveWindow_ActiveTabLeftCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_ActiveTabLeftCap.tiff; sourceTree = "<group>"; };
+		26E0120819772A3E003793BC /* InactiveWindow_ActiveTabRightCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_ActiveTabRightCap.tiff; sourceTree = "<group>"; };
+		26E0120919772A3E003793BC /* InactiveWindow_AddTabButton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_AddTabButton.tiff; sourceTree = "<group>"; };
+		26E0120B19772A3E003793BC /* InactiveWindow_InactiveTabBG.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_InactiveTabBG.tiff; sourceTree = "<group>"; };
+		26E0120C19772A3E003793BC /* InactiveWindow_InactiveTabClose.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_InactiveTabClose.tiff; sourceTree = "<group>"; };
+		26E0120D19772A3E003793BC /* InactiveWindow_InactiveTabClosePressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_InactiveTabClosePressed.tiff; sourceTree = "<group>"; };
+		26E0120E19772A3E003793BC /* InactiveWindow_InactiveTabCloseRollover.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_InactiveTabCloseRollover.tiff; sourceTree = "<group>"; };
+		26E0120F19772A3E003793BC /* InactiveWindow_InactiveTabLeftCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_InactiveTabLeftCap.tiff; sourceTree = "<group>"; };
+		26E0121019772A3E003793BC /* InactiveWindow_InactiveTabRightCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = InactiveWindow_InactiveTabRightCap.tiff; sourceTree = "<group>"; };
+		26F59C0919770C860077DA98 /* ActiveWindow_ActiveTabClose.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_ActiveTabClose.tiff; sourceTree = "<group>"; };
+		26F59C0A19770C860077DA98 /* ActiveWindow_ActiveTabClosePressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_ActiveTabClosePressed.tiff; sourceTree = "<group>"; };
+		26F59C0B19770C860077DA98 /* ActiveWindow_ActiveTabCloseRollover.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_ActiveTabCloseRollover.tiff; sourceTree = "<group>"; };
+		26F59C0C19770C860077DA98 /* ActiveWindow_ActiveTabFill.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_ActiveTabFill.tiff; sourceTree = "<group>"; };
+		26F59C0D19770C860077DA98 /* ActiveWindow_ActiveTabLeftCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_ActiveTabLeftCap.tiff; sourceTree = "<group>"; };
+		26F59C0E19770C860077DA98 /* ActiveWindow_ActiveTabRightCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_ActiveTabRightCap.tiff; sourceTree = "<group>"; };
+		26F59C0F19770C860077DA98 /* ActiveWindow_AddTabButton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_AddTabButton.tiff; sourceTree = "<group>"; };
+		26F59C1019770C860077DA98 /* ActiveWindow_AddTabButtonPushed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_AddTabButtonPushed.tiff; sourceTree = "<group>"; };
+		26F59C1119770C860077DA98 /* ActiveWindow_AddTabButtonRollover_Pressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_AddTabButtonRollover_Pressed.tiff; sourceTree = "<group>"; };
+		26F59C1219770C860077DA98 /* ActiveWindow_AddTabButtonRollover.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_AddTabButtonRollover.tiff; sourceTree = "<group>"; };
+		26F59C1719770C860077DA98 /* ActiveWindow_InactiveTabBG.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_InactiveTabBG.tiff; sourceTree = "<group>"; };
+		26F59C1819770C860077DA98 /* ActiveWindow_InactiveTabClose.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_InactiveTabClose.tiff; sourceTree = "<group>"; };
+		26F59C1919770C860077DA98 /* ActiveWindow_InactiveTabClosePressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_InactiveTabClosePressed.tiff; sourceTree = "<group>"; };
+		26F59C1A19770C860077DA98 /* ActiveWindow_InactiveTabCloseRollover.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_InactiveTabCloseRollover.tiff; sourceTree = "<group>"; };
+		26F59C1B19770C860077DA98 /* ActiveWindow_InactiveTabLeftCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_InactiveTabLeftCap.tiff; sourceTree = "<group>"; };
+		26F59C1C19770C860077DA98 /* ActiveWindow_InactiveTabRightCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_InactiveTabRightCap.tiff; sourceTree = "<group>"; };
+		26F59C1D19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabCenterFill.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_Pulled_ActiveTabCenterFill.tiff; sourceTree = "<group>"; };
+		26F59C1E19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabLeftCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_Pulled_ActiveTabLeftCap.tiff; sourceTree = "<group>"; };
+		26F59C1F19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabRightCap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ActiveWindow_Pulled_ActiveTabRightCap.tiff; sourceTree = "<group>"; };
 		53DF68FD067E5B5A0090B5B0 /* PSMTabBarControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSMTabBarControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF68FE067E5B5A0090B5B0 /* PSMTabBarControl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PSMTabBarControl-Info.plist"; path = "Source/PSMTabBarControl-Info.plist"; sourceTree = "<group>"; };
 		5A5652F915D1E72F00F9EFD5 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
@@ -329,6 +397,7 @@
 		0259C582FE90428111CA0C5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				267A6F7B1976C30F0090F905 /* OSX_10.9 */,
 				8B3987C31184F19D004462EE /* AdiumGradient.png */,
 				8B3987C41184F19D004462EE /* AquaTabClose_Front_Pressed.png */,
 				8B3987C51184F19D004462EE /* AquaTabClose_Front_Rollover.png */,
@@ -421,6 +490,46 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		267A6F7B1976C30F0090F905 /* OSX_10.9 */ = {
+			isa = PBXGroup;
+			children = (
+				26F59C0919770C860077DA98 /* ActiveWindow_ActiveTabClose.tiff */,
+				26F59C0A19770C860077DA98 /* ActiveWindow_ActiveTabClosePressed.tiff */,
+				26F59C0B19770C860077DA98 /* ActiveWindow_ActiveTabCloseRollover.tiff */,
+				26F59C0C19770C860077DA98 /* ActiveWindow_ActiveTabFill.tiff */,
+				26F59C0D19770C860077DA98 /* ActiveWindow_ActiveTabLeftCap.tiff */,
+				26F59C0E19770C860077DA98 /* ActiveWindow_ActiveTabRightCap.tiff */,
+				26F59C0F19770C860077DA98 /* ActiveWindow_AddTabButton.tiff */,
+				26F59C1019770C860077DA98 /* ActiveWindow_AddTabButtonPushed.tiff */,
+				26F59C1119770C860077DA98 /* ActiveWindow_AddTabButtonRollover_Pressed.tiff */,
+				26F59C1219770C860077DA98 /* ActiveWindow_AddTabButtonRollover.tiff */,
+				26F59C1719770C860077DA98 /* ActiveWindow_InactiveTabBG.tiff */,
+				26F59C1819770C860077DA98 /* ActiveWindow_InactiveTabClose.tiff */,
+				26F59C1919770C860077DA98 /* ActiveWindow_InactiveTabClosePressed.tiff */,
+				26F59C1A19770C860077DA98 /* ActiveWindow_InactiveTabCloseRollover.tiff */,
+				26F59C1B19770C860077DA98 /* ActiveWindow_InactiveTabLeftCap.tiff */,
+				26F59C1C19770C860077DA98 /* ActiveWindow_InactiveTabRightCap.tiff */,
+				26F59C1D19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabCenterFill.tiff */,
+				26F59C1E19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabLeftCap.tiff */,
+				26F59C1F19770C860077DA98 /* ActiveWindow_Pulled_ActiveTabRightCap.tiff */,
+				26E0120319772A3E003793BC /* InactiveWindow_ActiveTabClose.tiff */,
+				26E0120419772A3E003793BC /* InactiveWindow_ActiveTabClosePressed.tiff */,
+				26E0120519772A3E003793BC /* InactiveWindow_ActiveTabCloseRollover.tiff */,
+				26E0120619772A3E003793BC /* InactiveWindow_ActiveTabFill.tiff */,
+				26E0120719772A3E003793BC /* InactiveWindow_ActiveTabLeftCap.tiff */,
+				26E0120819772A3E003793BC /* InactiveWindow_ActiveTabRightCap.tiff */,
+				26E0120919772A3E003793BC /* InactiveWindow_AddTabButton.tiff */,
+				26E0120B19772A3E003793BC /* InactiveWindow_InactiveTabBG.tiff */,
+				26E0120C19772A3E003793BC /* InactiveWindow_InactiveTabClose.tiff */,
+				26E0120D19772A3E003793BC /* InactiveWindow_InactiveTabClosePressed.tiff */,
+				26E0120E19772A3E003793BC /* InactiveWindow_InactiveTabCloseRollover.tiff */,
+				26E0120F19772A3E003793BC /* InactiveWindow_InactiveTabLeftCap.tiff */,
+				26E0121019772A3E003793BC /* InactiveWindow_InactiveTabRightCap.tiff */,
+			);
+			name = OSX_10.9;
+			path = Resources/OSX_10.9;
+			sourceTree = "<group>";
+		};
 		2E58F364FFB232C311CA0CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +591,8 @@
 				8B39882C1184F40E004462EE /* PSMLiveChatTabStyle.m */,
 				0694F10B15F4EB90000FBC15 /* PSMCardTabStyle.h */,
 				0694F10C15F4EB90000FBC15 /* PSMCardTabStyle.m */,
+				267A6FC81976C3650090F905 /* PSMSafariTabStyle.h */,
+				267A6FC91976C3650090F905 /* PSMSafariTabStyle.m */,
 			);
 			name = Styles;
 			sourceTree = "<group>";
@@ -542,6 +653,7 @@
 				0694F10D15F4EB91000FBC15 /* PSMCardTabStyle.h in Headers */,
 				97FF179D11EB5938004FA751 /* PSMUnifiedTabStyle.h in Headers */,
 				8B3988691184F64D004462EE /* NSString_AITruncation.h in Headers */,
+				267A6FCA1976C3650090F905 /* PSMSafariTabStyle.h in Headers */,
 				8B39886B1184F64E004462EE /* PSMAdiumTabStyle.h in Headers */,
 				8B39886D1184F650004462EE /* PSMAquaTabStyle.h in Headers */,
 				8B39886F1184F651004462EE /* PSMMetalTabStyle.h in Headers */,
@@ -636,7 +748,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB964DB191BC8D800175AF3 /* TabClose_Front_Rollover_Textured@2x.png in Resources */,
+				26F59C2119770C860077DA98 /* ActiveWindow_ActiveTabClosePressed.tiff in Resources */,
+				26F59C2019770C860077DA98 /* ActiveWindow_ActiveTabClose.tiff in Resources */,
+				26F59C3019770C860077DA98 /* ActiveWindow_InactiveTabClosePressed.tiff in Resources */,
 				8B3988931184F668004462EE /* AdiumGradient.png in Resources */,
+				26F59C2E19770C860077DA98 /* ActiveWindow_InactiveTabBG.tiff in Resources */,
+				26F59C3619770C860077DA98 /* ActiveWindow_Pulled_ActiveTabRightCap.tiff in Resources */,
+				26E0121A19772A3E003793BC /* InactiveWindow_InactiveTabClose.tiff in Resources */,
 				8B3988941184F668004462EE /* AquaTabClose_Front_Pressed.png in Resources */,
 				8B3988951184F668004462EE /* AquaTabClose_Front_Rollover.png in Resources */,
 				7EB964DC191BC8D800175AF3 /* TabClose_Front_Textured@2x.png in Resources */,
@@ -644,22 +762,35 @@
 				8B3988971184F668004462EE /* AquaTabCloseDirty_Front_Pressed.png in Resources */,
 				7EB964E2191BC8D800175AF3 /* TabClose_Front_Textured.png in Resources */,
 				7EB964E4191BC8D800175AF3 /* TabNewMetalPressed_Textured.png in Resources */,
+				26F59C2619770C860077DA98 /* ActiveWindow_AddTabButton.tiff in Resources */,
 				8B3988981184F668004462EE /* AquaTabCloseDirty_Front_Rollover.png in Resources */,
 				8B3988991184F668004462EE /* AquaTabCloseDirty_Front.png in Resources */,
 				8B39889A1184F668004462EE /* AquaTabNew.png in Resources */,
+				26F59C3219770C860077DA98 /* ActiveWindow_InactiveTabLeftCap.tiff in Resources */,
 				7EB964E1191BC8D800175AF3 /* TabClose_Front_Rollover_Textured.png in Resources */,
+				26E0121419772A3E003793BC /* InactiveWindow_ActiveTabFill.tiff in Resources */,
+				26F59C3319770C860077DA98 /* ActiveWindow_InactiveTabRightCap.tiff in Resources */,
 				8B39889B1184F668004462EE /* AquaTabNewPressed.png in Resources */,
+				26E0121919772A3E003793BC /* InactiveWindow_InactiveTabBG.tiff in Resources */,
 				8B39889C1184F668004462EE /* AquaTabNewRollover.png in Resources */,
+				26E0121C19772A3E003793BC /* InactiveWindow_InactiveTabCloseRollover.tiff in Resources */,
 				8B39889D1184F668004462EE /* AquaTabsBackground.png in Resources */,
+				26F59C3419770C860077DA98 /* ActiveWindow_Pulled_ActiveTabCenterFill.tiff in Resources */,
 				8B39889E1184F668004462EE /* AquaTabsDown.png in Resources */,
 				8B39889F1184F668004462EE /* AquaTabsDownGraphite.png in Resources */,
+				26F59C3519770C860077DA98 /* ActiveWindow_Pulled_ActiveTabLeftCap.tiff in Resources */,
+				26F59C2F19770C860077DA98 /* ActiveWindow_InactiveTabClose.tiff in Resources */,
 				7EB964D7191BC8D800175AF3 /* TabClose_Dirty_Pressed_Textured@2x.png in Resources */,
 				8B3988A01184F668004462EE /* AquaTabsDownNonKey.png in Resources */,
 				8B3988A11184F668004462EE /* AquaTabsSeparator.png in Resources */,
 				8B3988A21184F668004462EE /* AquaTabsSeparatorDown.png in Resources */,
+				26F59C2819770C860077DA98 /* ActiveWindow_AddTabButtonRollover_Pressed.tiff in Resources */,
 				8B3988A81184F668004462EE /* overflowImage.png in Resources */,
 				8B3988A91184F668004462EE /* overflowImagePressed.png in Resources */,
 				8B3988AA1184F668004462EE /* pi.png in Resources */,
+				26E0121219772A3E003793BC /* InactiveWindow_ActiveTabClosePressed.tiff in Resources */,
+				26F59C2319770C860077DA98 /* ActiveWindow_ActiveTabFill.tiff in Resources */,
+				26E0121D19772A3E003793BC /* InactiveWindow_InactiveTabLeftCap.tiff in Resources */,
 				8B3988AC1184F668004462EE /* TabClose_Dirty_Pressed.png in Resources */,
 				8B3988AD1184F668004462EE /* TabClose_Dirty_Rollover.png in Resources */,
 				8B3988AE1184F668004462EE /* TabClose_Dirty.png in Resources */,
@@ -668,28 +799,41 @@
 				8B3988B11184F668004462EE /* TabClose_Front.png in Resources */,
 				8B3988B41184F668004462EE /* TabNewMetal.png in Resources */,
 				7EB964DF191BC8D800175AF3 /* TabClose_Dirty_Textured.png in Resources */,
+				26F59C3119770C860077DA98 /* ActiveWindow_InactiveTabCloseRollover.tiff in Resources */,
+				26E0121319772A3E003793BC /* InactiveWindow_ActiveTabCloseRollover.tiff in Resources */,
+				26E0121119772A3E003793BC /* InactiveWindow_ActiveTabClose.tiff in Resources */,
+				26E0121E19772A3E003793BC /* InactiveWindow_InactiveTabRightCap.tiff in Resources */,
 				8B3988B51184F668004462EE /* TabNewMetalPressed.png in Resources */,
 				8B3988B61184F668004462EE /* TabNewMetalRollover.png in Resources */,
 				7EB964DA191BC8D800175AF3 /* TabClose_Front_Pressed_Textured@2x.png in Resources */,
 				98CC8D3415CECFC100A40F8B /* AquaTabClose_Front_Pressed@2x.png in Resources */,
 				98CC8D3515CECFC100A40F8B /* AquaTabClose_Front_Rollover@2x.png in Resources */,
+				26E0121B19772A3E003793BC /* InactiveWindow_InactiveTabClosePressed.tiff in Resources */,
+				26F59C2419770C860077DA98 /* ActiveWindow_ActiveTabLeftCap.tiff in Resources */,
+				26E0121619772A3E003793BC /* InactiveWindow_ActiveTabRightCap.tiff in Resources */,
+				26E0121719772A3E003793BC /* InactiveWindow_AddTabButton.tiff in Resources */,
 				98CC8D3615CECFC100A40F8B /* AquaTabClose_Front@2x.png in Resources */,
 				98CC8D3715CECFC100A40F8B /* overflowImage@2x.png in Resources */,
 				7EB964DD191BC8D800175AF3 /* TabClose_Dirty_Pressed_Textured.png in Resources */,
+				26E0121519772A3E003793BC /* InactiveWindow_ActiveTabLeftCap.tiff in Resources */,
 				98CC8D3815CECFC100A40F8B /* overflowImagePressed@2x.png in Resources */,
 				98CC8D3F15CEDD8700A40F8B /* AquaTabNewRollover@2x.png in Resources */,
 				7EB964E0191BC8D800175AF3 /* TabClose_Front_Pressed_Textured.png in Resources */,
+				26F59C2219770C860077DA98 /* ActiveWindow_ActiveTabCloseRollover.tiff in Resources */,
 				98CC8D4115CEDE6700A40F8B /* AquaTabNew@2x.png in Resources */,
 				7EB964E3191BC8D800175AF3 /* TabNewMetal_Textured.png in Resources */,
 				98CC8D4315CEDF8200A40F8B /* AquaTabNewPressed@2x.png in Resources */,
 				7EB964D9191BC8D800175AF3 /* TabClose_Dirty_Textured@2x.png in Resources */,
 				7EB964E5191BC8D800175AF3 /* TabNewMetalRollover_Textured.png in Resources */,
+				26F59C2919770C860077DA98 /* ActiveWindow_AddTabButtonRollover.tiff in Resources */,
 				98F1EBAE15F2EDE900A9C5EB /* TabClose_Dirty_Pressed@2x.png in Resources */,
 				7EB964DE191BC8D800175AF3 /* TabClose_Dirty_Rollover_Textured.png in Resources */,
 				98F1EBAF15F2EDE900A9C5EB /* TabClose_Dirty_Rollover@2x.png in Resources */,
 				98F1EBB015F2EDE900A9C5EB /* TabClose_Dirty@2x.png in Resources */,
 				7EB964D8191BC8D800175AF3 /* TabClose_Dirty_Rollover_Textured@2x.png in Resources */,
+				26F59C2519770C860077DA98 /* ActiveWindow_ActiveTabRightCap.tiff in Resources */,
 				98F1EBB115F2EDE900A9C5EB /* TabClose_Front_Pressed@2x.png in Resources */,
+				26F59C2719770C860077DA98 /* ActiveWindow_AddTabButtonPushed.tiff in Resources */,
 				98F1EBB215F2EDE900A9C5EB /* TabClose_Front_Rollover@2x.png in Resources */,
 				98F1EBB315F2EDE900A9C5EB /* TabClose_Front@2x.png in Resources */,
 			);
@@ -725,6 +869,7 @@
 				8B39887C1184F658004462EE /* PSMTabBarController.m in Sources */,
 				8B39887E1184F659004462EE /* PSMTabDragAssistant.m in Sources */,
 				8B3988801184F659004462EE /* PSMTabDragView.m in Sources */,
+				267A6FCB1976C3650090F905 /* PSMSafariTabStyle.m in Sources */,
 				8B3988821184F65A004462EE /* PSMTabDragWindow.m in Sources */,
 				8B3988841184F65B004462EE /* PSMTabDragWindowController.m in Sources */,
 				8B3988871184F65C004462EE /* PSMLiveChatTabStyle.m in Sources */,

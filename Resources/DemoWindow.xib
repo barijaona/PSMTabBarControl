@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<int key="IBDocument.SystemTarget">1060</int>
+		<string key="IBDocument.SystemVersion">13E28</string>
+		<string key="IBDocument.InterfaceBuilderVersion">6185.7</string>
+		<string key="IBDocument.AppKitVersion">1265.21</string>
+		<string key="IBDocument.HIToolboxVersion">698.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2549</string>
+			<string key="NS.object.0">6185.7</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSBox</string>
@@ -66,8 +66,9 @@
 						<object class="NSTabView" id="982771337">
 							<reference key="NSNextResponder" ref="547639528"/>
 							<int key="NSvFlags">274</int>
-							<string key="NSFrame">{{13, 83}, {454, 397}}</string>
+							<string key="NSFrame">{{13, 83}, {454, 395}}</string>
 							<reference key="NSSuperview" ref="547639528"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="81385104"/>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="944312339">
@@ -76,9 +77,11 @@
 									</object>
 									<object class="NSView" key="NSView" id="81385104">
 										<reference key="NSNextResponder" ref="982771337"/>
-										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{10, 33}, {434, 351}}</string>
+										<int key="NSvFlags">274</int>
+										<string key="NSFrame">{{10, 33}, {434, 349}}</string>
 										<reference key="NSSuperview" ref="982771337"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="355463507"/>
 									</object>
 									<string key="NSLabel">Tab</string>
 									<object class="NSColor" key="NSColor" id="984647675">
@@ -95,7 +98,7 @@
 							</array>
 							<reference key="NSSelectedTabViewItem" ref="944312339"/>
 							<object class="NSFont" key="NSFont" id="222309317">
-								<string key="NSName">LucidaGrande</string>
+								<bool key="IBIsSystemFont">YES</bool>
 								<double key="NSSize">13</double>
 								<int key="NSfFlags">1044</int>
 							</object>
@@ -111,13 +114,15 @@
 							<int key="NSvFlags">290</int>
 							<string key="NSFrame">{{20, 20}, {437, 65}}</string>
 							<reference key="NSSuperview" ref="547639528"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="795419747">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">272629760</int>
 								<string key="NSContents">Observe the changes in the reference NSTabView above in response to adding (New Tab from the File menu), rearranging (drag tabs above), removing (close button on above tabs), selecting (click a tab above), and stopping progress (stop button in toolbar).  You can also resize the window, and create an overflow of tabs to view the overflow menu.</string>
 								<object class="NSFont" key="NSSupport" id="160340994">
-									<string key="NSName">LucidaGrande</string>
+									<bool key="IBIsSystemFont">YES</bool>
 									<double key="NSSize">10</double>
 									<int key="NSfFlags">2843</int>
 								</object>
@@ -133,21 +138,36 @@
 									</object>
 								</object>
 							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+							<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 						</object>
 						<object class="NSCustomView" id="707679915">
 							<reference key="NSNextResponder" ref="547639528"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{0, 482}, {477, 22}}</string>
+							<string key="NSFrame">{{0, 480}, {477, 24}}</string>
 							<reference key="NSSuperview" ref="547639528"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="982771337"/>
 							<string key="NSClassName">PSMTabBarControl</string>
 						</object>
 					</array>
 					<string key="NSFrameSize">{477, 504}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="707679915"/>
+					<array key="NSViewContentFilters">
+						<object class="CIWhitePointAdjust">
+							<object class="CIColor" key="CI_inputColor">
+								<float key="red">1</float>
+								<float key="green">0.89999997615814209</float>
+								<float key="blue">0.80000001192092896</float>
+								<float key="alpha">1</float>
+							</object>
+							<bool key="CIEnabled">YES</bool>
+						</object>
+					</array>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1280, 1002}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{213, 129}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
@@ -172,6 +192,8 @@
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{461, 22}</string>
 						<reference key="NSSuperview" ref="177471416"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="901290954">
 							<int key="NSCellFlags">-1804599231</int>
@@ -196,10 +218,13 @@
 								<reference key="NSColor" ref="151466939"/>
 							</object>
 						</object>
+						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 					</object>
 				</array>
 				<string key="NSFrameSize">{461, 22}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="422209338"/>
 				<object class="NSMutableString" key="NSClassName">
 					<characters key="NS.bytes">NSView</characters>
@@ -235,6 +260,8 @@
 											<reference key="NSBackgroundColor" ref="984647675"/>
 											<reference key="NSTextColor" ref="214681105"/>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+										<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 									</object>
 									<object class="NSPopUpButton" id="516518656">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -245,10 +272,10 @@
 										<reference key="NSNextKeyView" ref="664786857"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSPopUpButtonCell" key="NSCell" id="397735197">
-											<int key="NSCellFlags">-2076049856</int>
+											<int key="NSCellFlags">-2076180416</int>
 											<int key="NSCellFlags2">133120</int>
 											<object class="NSFont" key="NSSupport" id="26">
-												<string key="NSName">LucidaGrande</string>
+												<bool key="IBIsSystemFont">YES</bool>
 												<double key="NSSize">11</double>
 												<int key="NSfFlags">3100</int>
 											</object>
@@ -268,11 +295,11 @@
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<int key="NSState">1</int>
-												<object class="NSCustomResource" key="NSOnImage" id="314630689">
+												<object class="NSCustomResource" key="NSOnImage" id="808290366">
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">NSMenuCheckmark</string>
 												</object>
-												<object class="NSCustomResource" key="NSMixedImage" id="809436141">
+												<object class="NSCustomResource" key="NSMixedImage" id="333539426">
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">NSMenuMixedState</string>
 												</object>
@@ -291,8 +318,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="397735197"/>
 													</object>
@@ -302,8 +329,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="397735197"/>
 													</object>
@@ -313,8 +340,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="397735197"/>
 													</object>
@@ -324,8 +351,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="397735197"/>
 													</object>
@@ -334,20 +361,31 @@
 														<string key="NSTitle">LiveChat</string>
 														<string key="NSKeyEquiv"/>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="397735197"/>
 													</object>
 													<reference ref="862897268"/>
+													<object class="NSMenuItem" id="339931082">
+														<reference key="NSMenu" ref="435367417"/>
+														<string key="NSTitle">Safari</string>
+														<string key="NSKeyEquiv"/>
+														<int key="NSMnemonicLoc">2147483647</int>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
+														<string key="NSAction">_popUpItemAction:</string>
+														<reference key="NSTarget" ref="397735197"/>
+													</object>
 												</array>
 											</object>
-											<int key="NSSelectedIndex">5</int>
+											<int key="NSSelectedIndex">-1</int>
 											<int key="NSPreferredEdge">3</int>
 											<bool key="NSUsesItemFromMenu">YES</bool>
 											<bool key="NSAltersState">YES</bool>
 											<int key="NSArrowPosition">1</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="320174059">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -377,6 +415,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="801518586">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -401,6 +440,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="251379386">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -425,6 +465,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSBox" id="2378556">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -451,6 +492,8 @@
 															<reference key="NSBackgroundColor" ref="984647675"/>
 															<reference key="NSTextColor" ref="214681105"/>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+														<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 													</object>
 													<object class="NSTextField" id="83760663">
 														<reference key="NSNextResponder" ref="672723318"/>
@@ -469,6 +512,8 @@
 															<reference key="NSBackgroundColor" ref="984647675"/>
 															<reference key="NSTextColor" ref="214681105"/>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+														<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 													</object>
 													<object class="NSTextField" id="1028185825">
 														<reference key="NSNextResponder" ref="672723318"/>
@@ -487,6 +532,8 @@
 															<reference key="NSBackgroundColor" ref="984647675"/>
 															<reference key="NSTextColor" ref="214681105"/>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+														<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 													</object>
 													<object class="NSTextField" id="32853753">
 														<reference key="NSNextResponder" ref="672723318"/>
@@ -506,6 +553,8 @@
 															<reference key="NSBackgroundColor" ref="168526294"/>
 															<reference key="NSTextColor" ref="318875574"/>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+														<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 													</object>
 													<object class="NSTextField" id="210324169">
 														<reference key="NSNextResponder" ref="672723318"/>
@@ -525,6 +574,8 @@
 															<reference key="NSBackgroundColor" ref="168526294"/>
 															<reference key="NSTextColor" ref="318875574"/>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+														<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 													</object>
 													<object class="NSTextField" id="390834612">
 														<reference key="NSNextResponder" ref="672723318"/>
@@ -544,6 +595,8 @@
 															<reference key="NSBackgroundColor" ref="168526294"/>
 															<reference key="NSTextColor" ref="318875574"/>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+														<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 													</object>
 													<object class="NSBox" id="975123020">
 														<reference key="NSNextResponder" ref="672723318"/>
@@ -592,6 +645,7 @@
 															<int key="NSPeriodicDelay">200</int>
 															<int key="NSPeriodicInterval">25</int>
 														</object>
+														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													</object>
 												</array>
 												<string key="NSFrame">{{2, 2}, {140, 115}}</string>
@@ -644,6 +698,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="205521408">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -668,6 +723,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSTextField" id="664786857">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -686,6 +742,8 @@
 											<reference key="NSBackgroundColor" ref="984647675"/>
 											<reference key="NSTextColor" ref="214681105"/>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+										<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 									</object>
 									<object class="NSPopUpButton" id="262388956">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -696,7 +754,7 @@
 										<reference key="NSNextKeyView" ref="939246607"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSPopUpButtonCell" key="NSCell" id="830813116">
-											<int key="NSCellFlags">-2076049856</int>
+											<int key="NSCellFlags">-2076180416</int>
 											<int key="NSCellFlags2">133120</int>
 											<reference key="NSSupport" ref="26"/>
 											<reference key="NSControlView" ref="262388956"/>
@@ -716,8 +774,8 @@
 												<int key="NSKeyEquivModMask">1048576</int>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<int key="NSState">1</int>
-												<reference key="NSOnImage" ref="314630689"/>
-												<reference key="NSMixedImage" ref="809436141"/>
+												<reference key="NSOnImage" ref="808290366"/>
+												<reference key="NSMixedImage" ref="333539426"/>
 												<string key="NSAction">_popUpItemAction:</string>
 												<reference key="NSTarget" ref="830813116"/>
 											</object>
@@ -734,8 +792,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="830813116"/>
 													</object>
@@ -746,6 +804,7 @@
 											<bool key="NSAltersState">YES</bool>
 											<int key="NSArrowPosition">1</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="1069445369">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -769,6 +828,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="1045493222">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -792,6 +852,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSTextField" id="939246607">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -810,6 +871,8 @@
 											<reference key="NSBackgroundColor" ref="984647675"/>
 											<reference key="NSTextColor" ref="214681105"/>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+										<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 									</object>
 									<object class="NSPopUpButton" id="431068963">
 										<reference key="NSNextResponder" ref="166027259"/>
@@ -820,7 +883,7 @@
 										<reference key="NSNextKeyView" ref="320174059"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSPopUpButtonCell" key="NSCell" id="298844212">
-											<int key="NSCellFlags">-2076049856</int>
+											<int key="NSCellFlags">-2076180416</int>
 											<int key="NSCellFlags2">133120</int>
 											<reference key="NSSupport" ref="26"/>
 											<reference key="NSControlView" ref="431068963"/>
@@ -840,8 +903,8 @@
 												<int key="NSKeyEquivModMask">1048576</int>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<int key="NSState">1</int>
-												<reference key="NSOnImage" ref="314630689"/>
-												<reference key="NSMixedImage" ref="809436141"/>
+												<reference key="NSOnImage" ref="808290366"/>
+												<reference key="NSMixedImage" ref="333539426"/>
 												<string key="NSAction">_popUpItemAction:</string>
 												<reference key="NSTarget" ref="298844212"/>
 											</object>
@@ -858,8 +921,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="298844212"/>
 													</object>
@@ -870,6 +933,7 @@
 											<bool key="NSAltersState">YES</bool>
 											<int key="NSArrowPosition">1</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 								</array>
 								<string key="NSFrame">{{2, 2}, {174, 360}}</string>
@@ -925,6 +989,8 @@
 											<reference key="NSBackgroundColor" ref="984647675"/>
 											<reference key="NSTextColor" ref="214681105"/>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+										<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 									</object>
 									<object class="NSTextField" id="452500339">
 										<reference key="NSNextResponder" ref="619015273"/>
@@ -943,6 +1009,8 @@
 											<reference key="NSBackgroundColor" ref="984647675"/>
 											<reference key="NSTextColor" ref="214681105"/>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+										<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 									</object>
 									<object class="NSButton" id="308967253">
 										<reference key="NSNextResponder" ref="619015273"/>
@@ -966,6 +1034,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSPopUpButton" id="379448417">
 										<reference key="NSNextResponder" ref="619015273"/>
@@ -976,7 +1045,7 @@
 										<reference key="NSNextKeyView" ref="452500339"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSPopUpButtonCell" key="NSCell" id="981689571">
-											<int key="NSCellFlags">-2076049856</int>
+											<int key="NSCellFlags">-2076180416</int>
 											<int key="NSCellFlags2">133120</int>
 											<reference key="NSSupport" ref="26"/>
 											<reference key="NSControlView" ref="379448417"/>
@@ -996,8 +1065,8 @@
 												<int key="NSKeyEquivModMask">1048576</int>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<int key="NSState">1</int>
-												<reference key="NSOnImage" ref="314630689"/>
-												<reference key="NSMixedImage" ref="809436141"/>
+												<reference key="NSOnImage" ref="808290366"/>
+												<reference key="NSMixedImage" ref="333539426"/>
 												<string key="NSAction">_popUpItemAction:</string>
 												<reference key="NSTarget" ref="981689571"/>
 											</object>
@@ -1013,8 +1082,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="981689571"/>
 													</object>
@@ -1024,8 +1093,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="981689571"/>
 													</object>
@@ -1035,8 +1104,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="981689571"/>
 													</object>
@@ -1046,8 +1115,8 @@
 														<string key="NSKeyEquiv"/>
 														<int key="NSKeyEquivModMask">1048576</int>
 														<int key="NSMnemonicLoc">2147483647</int>
-														<reference key="NSOnImage" ref="314630689"/>
-														<reference key="NSMixedImage" ref="809436141"/>
+														<reference key="NSOnImage" ref="808290366"/>
+														<reference key="NSMixedImage" ref="333539426"/>
 														<string key="NSAction">_popUpItemAction:</string>
 														<reference key="NSTarget" ref="981689571"/>
 													</object>
@@ -1060,6 +1129,7 @@
 											<bool key="NSAltersState">YES</bool>
 											<int key="NSArrowPosition">1</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSTextField" id="538635561">
 										<reference key="NSNextResponder" ref="619015273"/>
@@ -1079,6 +1149,8 @@
 											<reference key="NSBackgroundColor" ref="168526294"/>
 											<reference key="NSTextColor" ref="318875574"/>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+										<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 									</object>
 									<object class="NSButton" id="936131574">
 										<reference key="NSNextResponder" ref="619015273"/>
@@ -1102,6 +1174,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 									<object class="NSButton" id="269319955">
 										<reference key="NSNextResponder" ref="619015273"/>
@@ -1109,6 +1182,7 @@
 										<string key="NSFrame">{{13, 11}, {88, 18}}</string>
 										<reference key="NSSuperview" ref="619015273"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="476127446">
 											<int key="NSCellFlags">67108864</int>
@@ -1124,6 +1198,7 @@
 											<int key="NSPeriodicDelay">200</int>
 											<int key="NSPeriodicInterval">25</int>
 										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
 								</array>
 								<string key="NSFrame">{{2, 2}, {172, 128}}</string>
@@ -1165,10 +1240,9 @@
 				<string key="NSExtension">NSResponder</string>
 			</object>
 			<object class="NSView" id="162215603">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<string key="NSFrameSize">{125, 1}</string>
-				<reference key="NSSuperview"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1811,6 +1885,7 @@
 							<reference ref="433341428"/>
 							<reference ref="972850579"/>
 							<reference ref="862897268"/>
+							<reference ref="339931082"/>
 						</array>
 						<reference key="parent" ref="397735197"/>
 					</object>
@@ -2238,6 +2313,11 @@
 						<reference key="object" ref="862897268"/>
 						<reference key="parent" ref="435367417"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">208</int>
+						<reference key="object" ref="339931082"/>
+						<reference key="parent" ref="435367417"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2260,6 +2340,7 @@
 				<string key="201.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="202.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="206.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="208.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2329,6 +2410,7 @@
 				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="81.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<reference key="83.IBNSViewMetadataGestureRecognizers" ref="0"/>
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="84.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="85.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2341,7 +2423,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">207</int>
+			<int key="maxID">208</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2351,20 +2433,6 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addNewTab:">id</string>
 						<string key="closeTab:">id</string>
-						<string key="configAddTabButton:">id</string>
-						<string key="configAllowsScrubbing:">id</string>
-						<string key="configAutomaticallyAnimates:">id</string>
-						<string key="configCanCloseOnlyTab:">id</string>
-						<string key="configDisableTabClose:">id</string>
-						<string key="configHideForSingleTab:">id</string>
-						<string key="configOrientation:">id</string>
-						<string key="configStyle:">id</string>
-						<string key="configTabMaxWidth:">id</string>
-						<string key="configTabMinWidth:">id</string>
-						<string key="configTabOptimumWidth:">id</string>
-						<string key="configTabSizeToFit:">id</string>
-						<string key="configTearOffStyle:">id</string>
-						<string key="configUseOverflowMenu:">id</string>
 						<string key="hasLargeImageAction:">id</string>
 						<string key="isEditedAction:">id</string>
 						<string key="isProcessingAction:">id</string>
@@ -2383,62 +2451,6 @@
 							<string key="name">closeTab:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="configAddTabButton:">
-							<string key="name">configAddTabButton:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configAllowsScrubbing:">
-							<string key="name">configAllowsScrubbing:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configAutomaticallyAnimates:">
-							<string key="name">configAutomaticallyAnimates:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configCanCloseOnlyTab:">
-							<string key="name">configCanCloseOnlyTab:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configDisableTabClose:">
-							<string key="name">configDisableTabClose:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configHideForSingleTab:">
-							<string key="name">configHideForSingleTab:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configOrientation:">
-							<string key="name">configOrientation:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configStyle:">
-							<string key="name">configStyle:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configTabMaxWidth:">
-							<string key="name">configTabMaxWidth:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configTabMinWidth:">
-							<string key="name">configTabMinWidth:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configTabOptimumWidth:">
-							<string key="name">configTabOptimumWidth:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configTabSizeToFit:">
-							<string key="name">configTabSizeToFit:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configTearOffStyle:">
-							<string key="name">configTearOffStyle:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="configUseOverflowMenu:">
-							<string key="name">configUseOverflowMenu:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="hasLargeImageAction:">
 							<string key="name">hasLargeImageAction:</string>
 							<string key="candidateClassName">id</string>
@@ -2451,11 +2463,11 @@
 							<string key="name">isProcessingAction:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="setIconNamed:">
+						<object class="IBActionInfo" key="setIconNamed:" id="895489042">
 							<string key="name">setIconNamed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="setObjectCount:">
+						<object class="IBActionInfo" key="setObjectCount:" id="80961326">
 							<string key="name">setObjectCount:</string>
 							<string key="candidateClassName">id</string>
 						</object>
@@ -2463,7 +2475,7 @@
 							<string key="name">setTabLabel:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="stopProcessing:">
+						<object class="IBActionInfo" key="stopProcessing:" id="472805827">
 							<string key="name">stopProcessing:</string>
 							<string key="candidateClassName">id</string>
 						</object>
@@ -2498,104 +2510,384 @@
 						<string key="textField_optimumWidth">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="button_allowScrubbing">
+						<object class="IBToOneOutletInfo" key="button_allowScrubbing" id="1036512785">
 							<string key="name">button_allowScrubbing</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_automaticallyAnimate">
+						<object class="IBToOneOutletInfo" key="button_automaticallyAnimate" id="635044541">
 							<string key="name">button_automaticallyAnimate</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_canCloseOnlyTab">
+						<object class="IBToOneOutletInfo" key="button_canCloseOnlyTab" id="908568867">
 							<string key="name">button_canCloseOnlyTab</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_disableTabClosing">
+						<object class="IBToOneOutletInfo" key="button_disableTabClosing" id="125681294">
 							<string key="name">button_disableTabClosing</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_hideForSingleTab">
+						<object class="IBToOneOutletInfo" key="button_hideForSingleTab" id="369591085">
 							<string key="name">button_hideForSingleTab</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_showAddTab">
+						<object class="IBToOneOutletInfo" key="button_showAddTab" id="168366468">
 							<string key="name">button_showAddTab</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_sizeToFit">
+						<object class="IBToOneOutletInfo" key="button_sizeToFit" id="899540779">
 							<string key="name">button_sizeToFit</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="button_useOverflow">
+						<object class="IBToOneOutletInfo" key="button_useOverflow" id="702382887">
 							<string key="name">button_useOverflow</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="drawer">
+						<object class="IBToOneOutletInfo" key="drawer" id="966919576">
 							<string key="name">drawer</string>
 							<string key="candidateClassName">NSDrawer</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="hasLargeImageButton">
+						<object class="IBToOneOutletInfo" key="hasLargeImageButton" id="1012959156">
 							<string key="name">hasLargeImageButton</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="iconButton">
+						<object class="IBToOneOutletInfo" key="iconButton" id="199260734">
 							<string key="name">iconButton</string>
 							<string key="candidateClassName">NSPopUpButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="isEditedButton">
+						<object class="IBToOneOutletInfo" key="isEditedButton" id="496941699">
 							<string key="name">isEditedButton</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="isProcessingButton">
+						<object class="IBToOneOutletInfo" key="isProcessingButton" id="1003534046">
 							<string key="name">isProcessingButton</string>
 							<string key="candidateClassName">NSButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="objectCounterField">
+						<object class="IBToOneOutletInfo" key="objectCounterField" id="220305405">
 							<string key="name">objectCounterField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="popUp_orientation">
+						<object class="IBToOneOutletInfo" key="popUp_orientation" id="763758104">
 							<string key="name">popUp_orientation</string>
 							<string key="candidateClassName">NSPopUpButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="popUp_style">
+						<object class="IBToOneOutletInfo" key="popUp_style" id="955090948">
 							<string key="name">popUp_style</string>
 							<string key="candidateClassName">NSPopUpButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="popUp_tearOff">
+						<object class="IBToOneOutletInfo" key="popUp_tearOff" id="220414540">
 							<string key="name">popUp_tearOff</string>
 							<string key="candidateClassName">NSPopUpButton</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="tabBar">
+						<object class="IBToOneOutletInfo" key="tabBar" id="1035641301">
 							<string key="name">tabBar</string>
 							<string key="candidateClassName">PSMTabBarControl</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="tabField">
+						<object class="IBToOneOutletInfo" key="tabField" id="928404134">
 							<string key="name">tabField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="tabView">
+						<object class="IBToOneOutletInfo" key="tabView" id="847350169">
 							<string key="name">tabView</string>
 							<string key="candidateClassName">NSTabView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="textField_maxWidth">
+						<object class="IBToOneOutletInfo" key="textField_maxWidth" id="677592140">
 							<string key="name">textField_maxWidth</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="textField_minWidth">
+						<object class="IBToOneOutletInfo" key="textField_minWidth" id="881058408">
 							<string key="name">textField_minWidth</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="textField_optimumWidth">
+						<object class="IBToOneOutletInfo" key="textField_optimumWidth" id="742184253">
 							<string key="name">textField_optimumWidth</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Source/DemoWindowController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DemoWindowController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addNewTab:">id</string>
+						<string key="closeTab:">id</string>
+						<string key="configAddTabButton:">id</string>
+						<string key="configAllowsScrubbing:">id</string>
+						<string key="configAutomaticallyAnimates:">id</string>
+						<string key="configCanCloseOnlyTab:">id</string>
+						<string key="configDisableTabClose:">id</string>
+						<string key="configHideForSingleTab:">id</string>
+						<string key="configOrientation:">id</string>
+						<string key="configStyle:">id</string>
+						<string key="configTabMaxWidth:">id</string>
+						<string key="configTabMinWidth:">id</string>
+						<string key="configTabOptimumWidth:">id</string>
+						<string key="configTabSizeToFit:">id</string>
+						<string key="configTearOffStyle:">id</string>
+						<string key="configUseOverflowMenu:">id</string>
+						<string key="hasLargeImageAction:">id</string>
+						<string key="isEditedAction:">id</string>
+						<string key="isProcessingAction:">id</string>
+						<string key="setTabLabel:">id</string>
+						<string key="toggleToolbar:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addNewTab:" id="332792802">
+							<string key="name">addNewTab:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="closeTab:" id="798554108">
+							<string key="name">closeTab:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configAddTabButton:" id="113419377">
+							<string key="name">configAddTabButton:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configAllowsScrubbing:" id="570619671">
+							<string key="name">configAllowsScrubbing:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configAutomaticallyAnimates:" id="603765945">
+							<string key="name">configAutomaticallyAnimates:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configCanCloseOnlyTab:" id="1064318713">
+							<string key="name">configCanCloseOnlyTab:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configDisableTabClose:" id="21047669">
+							<string key="name">configDisableTabClose:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configHideForSingleTab:" id="266817405">
+							<string key="name">configHideForSingleTab:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configOrientation:" id="1025300724">
+							<string key="name">configOrientation:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configStyle:" id="110135">
+							<string key="name">configStyle:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configTabMaxWidth:" id="271884196">
+							<string key="name">configTabMaxWidth:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configTabMinWidth:" id="1047057009">
+							<string key="name">configTabMinWidth:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configTabOptimumWidth:" id="626938627">
+							<string key="name">configTabOptimumWidth:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configTabSizeToFit:" id="715694662">
+							<string key="name">configTabSizeToFit:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configTearOffStyle:" id="1026398097">
+							<string key="name">configTearOffStyle:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="configUseOverflowMenu:" id="968577907">
+							<string key="name">configUseOverflowMenu:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="hasLargeImageAction:" id="294950093">
+							<string key="name">hasLargeImageAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="isEditedAction:" id="353786861">
+							<string key="name">isEditedAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="isProcessingAction:" id="223346135">
+							<string key="name">isProcessingAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="setTabLabel:" id="525121877">
+							<string key="name">setTabLabel:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="toggleToolbar:" id="830618078">
+							<string key="name">toggleToolbar:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Source/DemoWindowController.m</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DemoWindowController</string>
+					<string key="superclassName">NSWindowController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addNewTab:">id</string>
+						<string key="closeTab:">id</string>
+						<string key="configAddTabButton:">id</string>
+						<string key="configAllowsScrubbing:">id</string>
+						<string key="configAutomaticallyAnimates:">id</string>
+						<string key="configCanCloseOnlyTab:">id</string>
+						<string key="configDisableTabClose:">id</string>
+						<string key="configHideForSingleTab:">id</string>
+						<string key="configOrientation:">id</string>
+						<string key="configStyle:">id</string>
+						<string key="configTabMaxWidth:">id</string>
+						<string key="configTabMinWidth:">id</string>
+						<string key="configTabOptimumWidth:">id</string>
+						<string key="configTabSizeToFit:">id</string>
+						<string key="configTearOffStyle:">id</string>
+						<string key="configUseOverflowMenu:">id</string>
+						<string key="hasLargeImageAction:">id</string>
+						<string key="isEditedAction:">id</string>
+						<string key="isProcessingAction:">id</string>
+						<string key="setIconNamed:">id</string>
+						<string key="setObjectCount:">id</string>
+						<string key="setTabLabel:">id</string>
+						<string key="stopProcessing:">id</string>
+						<string key="toggleToolbar:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<reference key="addNewTab:" ref="332792802"/>
+						<reference key="closeTab:" ref="798554108"/>
+						<reference key="configAddTabButton:" ref="113419377"/>
+						<reference key="configAllowsScrubbing:" ref="570619671"/>
+						<reference key="configAutomaticallyAnimates:" ref="603765945"/>
+						<reference key="configCanCloseOnlyTab:" ref="1064318713"/>
+						<reference key="configDisableTabClose:" ref="21047669"/>
+						<reference key="configHideForSingleTab:" ref="266817405"/>
+						<reference key="configOrientation:" ref="1025300724"/>
+						<reference key="configStyle:" ref="110135"/>
+						<reference key="configTabMaxWidth:" ref="271884196"/>
+						<reference key="configTabMinWidth:" ref="1047057009"/>
+						<reference key="configTabOptimumWidth:" ref="626938627"/>
+						<reference key="configTabSizeToFit:" ref="715694662"/>
+						<reference key="configTearOffStyle:" ref="1026398097"/>
+						<reference key="configUseOverflowMenu:" ref="968577907"/>
+						<reference key="hasLargeImageAction:" ref="294950093"/>
+						<reference key="isEditedAction:" ref="353786861"/>
+						<reference key="isProcessingAction:" ref="223346135"/>
+						<reference key="setIconNamed:" ref="895489042"/>
+						<reference key="setObjectCount:" ref="80961326"/>
+						<reference key="setTabLabel:" ref="525121877"/>
+						<reference key="stopProcessing:" ref="472805827"/>
+						<reference key="toggleToolbar:" ref="830618078"/>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="button_allowScrubbing">NSButton</string>
+						<string key="button_automaticallyAnimate">NSButton</string>
+						<string key="button_canCloseOnlyTab">NSButton</string>
+						<string key="button_disableTabClosing">NSButton</string>
+						<string key="button_hideForSingleTab">NSButton</string>
+						<string key="button_showAddTab">NSButton</string>
+						<string key="button_sizeToFit">NSButton</string>
+						<string key="button_useOverflow">NSButton</string>
+						<string key="drawer">NSDrawer</string>
+						<string key="hasLargeImageButton">NSButton</string>
+						<string key="iconButton">NSPopUpButton</string>
+						<string key="isEditedButton">NSButton</string>
+						<string key="isProcessingButton">NSButton</string>
+						<string key="objectCounterField">NSTextField</string>
+						<string key="popUp_orientation">NSPopUpButton</string>
+						<string key="popUp_style">NSPopUpButton</string>
+						<string key="popUp_tearOff">NSPopUpButton</string>
+						<string key="tabBar">PSMTabBarControl</string>
+						<string key="tabField">NSTextField</string>
+						<string key="tabView">NSTabView</string>
+						<string key="textField_maxWidth">NSTextField</string>
+						<string key="textField_minWidth">NSTextField</string>
+						<string key="textField_optimumWidth">NSTextField</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<reference key="button_allowScrubbing" ref="1036512785"/>
+						<reference key="button_automaticallyAnimate" ref="635044541"/>
+						<reference key="button_canCloseOnlyTab" ref="908568867"/>
+						<reference key="button_disableTabClosing" ref="125681294"/>
+						<reference key="button_hideForSingleTab" ref="369591085"/>
+						<reference key="button_showAddTab" ref="168366468"/>
+						<reference key="button_sizeToFit" ref="899540779"/>
+						<reference key="button_useOverflow" ref="702382887"/>
+						<reference key="drawer" ref="966919576"/>
+						<reference key="hasLargeImageButton" ref="1012959156"/>
+						<reference key="iconButton" ref="199260734"/>
+						<reference key="isEditedButton" ref="496941699"/>
+						<reference key="isProcessingButton" ref="1003534046"/>
+						<reference key="objectCounterField" ref="220305405"/>
+						<reference key="popUp_orientation" ref="763758104"/>
+						<reference key="popUp_style" ref="955090948"/>
+						<reference key="popUp_tearOff" ref="220414540"/>
+						<reference key="tabBar" ref="1035641301"/>
+						<reference key="tabField" ref="928404134"/>
+						<reference key="tabView" ref="847350169"/>
+						<reference key="textField_maxWidth" ref="677592140"/>
+						<reference key="textField_minWidth" ref="881058408"/>
+						<reference key="textField_optimumWidth" ref="742184253"/>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DemoWindowController.h</string>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">FirstResponder</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBUserSource</string>
+						<string key="minorKey"/>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PSMTabBarControl</string>
+					<string key="superclassName">NSControl</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="delegate">id</string>
+						<string key="partnerView">id</string>
+						<string key="tabView">NSTabView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="delegate" id="972541233">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="partnerView" id="161101446">
+							<string key="name">partnerView</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tabView" id="553692327">
+							<string key="name">tabView</string>
+							<string key="candidateClassName">NSTabView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Source/PSMTabBarControl.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PSMTabBarControl</string>
+					<string key="superclassName">NSControl</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="delegate">id</string>
+						<string key="partnerView">id</string>
+						<string key="tabView">NSTabView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<reference key="delegate" ref="972541233"/>
+						<reference key="partnerView" ref="161101446"/>
+						<reference key="tabView" ref="553692327"/>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PSMTabBarControl.h</string>
+					</object>
+				</object>
+			</array>
+			<array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.2+">
 				<object class="IBPartialClassDescription">
 					<string key="className">PSMTabBarControl</string>
 					<string key="superclassName">NSControl</string>
@@ -2619,17 +2911,22 @@
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PSMTabBarControl.h</string>
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">PSMTabBarControl.framework/Headers/PSMTabBarControl.h</string>
 					</object>
 				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">NO</bool>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
+			<real value="1060" key="NS.object.0"/>
+		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
-			<integer value="3200" key="NS.object.0"/>
+			<integer value="4600" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
