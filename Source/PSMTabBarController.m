@@ -323,7 +323,7 @@ static NSInteger potentialMinimumForArray(NSArray *array, NSInteger minimum){
 								for(NSUInteger q = numberOfVisibleCells; q > 0; q--) {
 									NSInteger desiredAddition = leftoverWidth / (NSInteger)q;
 									NSInteger newCellWidth = (NSInteger)[newWidths[q-1] doubleValue] + desiredAddition;
-									newWidths[q-1] = [NSNumber numberWithDouble:newCellWidth];
+                                    newWidths[q-1] = @(newCellWidth);
 									leftoverWidth -= desiredAddition;
 									totalOccupiedWidth += desiredAddition;
 								}

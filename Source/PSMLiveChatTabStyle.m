@@ -39,10 +39,8 @@
 		_addTabButtonPressedImage = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"AquaTabNewPressed"]];
 		_addTabButtonRolloverImage = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"AquaTabNewRollover"]];
 
-		_objectCountStringAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
-										[[NSColor whiteColor] colorWithAlphaComponent:0.85], NSForegroundColorAttributeName,
-										[[NSFontManager sharedFontManager] convertFont:[NSFont fontWithName:@"Lucida Grande" size:11.0] toHaveTrait:NSBoldFontMask], NSFontAttributeName,
-										nil];
+		_objectCountStringAttributes = @{NSForegroundColorAttributeName: [[NSColor whiteColor] colorWithAlphaComponent:0.85],
+										NSFontAttributeName: [[NSFontManager sharedFontManager] convertFont:[NSFont fontWithName:@"Lucida Grande" size:11.0] toHaveTrait:NSBoldFontMask]};
 		_leftMargin = 5.0;
 	}
 	return self;

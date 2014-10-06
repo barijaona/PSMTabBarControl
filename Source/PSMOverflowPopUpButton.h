@@ -18,13 +18,12 @@
 	CGFloat									_animationValue;
 }
 
-- (instancetype)initWithFrame:(NSRect)frameRect pullsDown:(BOOL)flag NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithFrame:(NSRect)frameRect pullsDown:(BOOL)flag __attribute((objc_designated_initializer));
 
 //alternate image display
-- (BOOL)animatingAlternateImage;
-- (void)setAnimatingAlternateImage:(BOOL)flag;
+@property (NS_NONATOMIC_IOSONLY) BOOL animatingAlternateImage;
 
 // archiving
 - (void)encodeWithCoder:(NSCoder *)aCoder;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder __attribute((objc_designated_initializer));
 @end

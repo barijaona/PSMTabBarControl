@@ -26,16 +26,14 @@
 	BOOL					_drawsRight;
 }
 
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)init __attribute((objc_designated_initializer));
 
 - (void)loadImages;
 
-- (BOOL)drawsUnified;
-- (void)setDrawsUnified:(BOOL)value;
-- (BOOL)drawsRight;
-- (void)setDrawsRight:(BOOL)value;
+@property (NS_NONATOMIC_IOSONLY) BOOL drawsUnified;
+@property (NS_NONATOMIC_IOSONLY) BOOL drawsRight;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder __attribute((objc_designated_initializer));
 
 @end

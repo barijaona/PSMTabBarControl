@@ -24,13 +24,12 @@
 	NSRect									_originalWindowFrame;
 }
 
-- (instancetype)initWithWindow:(NSWindow *)window NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithImage:(NSImage *)image styleMask:(NSUInteger) styleMask tearOffStyle:(PSMTabBarTearOffStyle)tearOffStyle NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithWindow:(NSWindow *)window __attribute((objc_designated_initializer));
+- (instancetype)initWithCoder:(NSCoder *)coder __attribute((objc_designated_initializer));
+- (instancetype)initWithImage:(NSImage *)image styleMask:(NSUInteger) styleMask tearOffStyle:(PSMTabBarTearOffStyle)tearOffStyle __attribute((objc_designated_initializer));
 
-- (NSImage *)image;
-- (NSImage *)alternateImage;
-- (void)setAlternateImage:(NSImage *)image;
-- (BOOL)isAnimating;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSImage *image;
+@property (NS_NONATOMIC_IOSONLY, copy) NSImage *alternateImage;
+@property (NS_NONATOMIC_IOSONLY, getter=isAnimating, readonly) BOOL animating;
 - (void)switchImages;
 @end
