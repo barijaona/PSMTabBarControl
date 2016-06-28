@@ -177,7 +177,7 @@
 		//Draw for our whole bounds; it'll be automatically clipped to fit the appropriate drawing area
 		rect = [tabBarControl bounds];
 
-		[aquaTabBg drawInRect:rect fromRect:NSMakeRect(0.0, 0.0, 1.0, 22.0) operation:NSCompositeSourceOver fraction:1.0 respectFlipped:NO hints:nil];
+		[aquaTabBg drawInRect:rect fromRect:NSMakeRect(0.0, 0.0, 1.0, 22.0) operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
 	}
 }
 
