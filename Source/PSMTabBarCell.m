@@ -748,7 +748,11 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 			attributeValue = [self stringValue];
 		}
 	} else if([attribute isEqualToString: NSAccessibilityValueAttribute]) {
-		attributeValue = [NSNumber numberWithBool:([self tabState] & PSMTab_SelectedMask)];
+		if ([self tabState] & PSMTab_SelectedMask) {
+			attributeValue = [NSNumber numberWithInt:NSOnState];
+		} else {
+			attributeValue = [NSNumber numberWithInt:NSOffState];
+		}
     } else if ([attribute isEqualToString:NSAccessibilityPositionAttribute] || [attribute isEqualToString:NSAccessibilitySizeAttribute]) {
         NSRect rect = [self frame];
         rect = [[self controlView] convertRect:rect toView:nil];
