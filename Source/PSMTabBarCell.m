@@ -720,6 +720,10 @@ static inline NSSize scaleProportionally(NSSize imageSize, NSSize canvasSize, BO
 	return NO;
 }
 
+- (BOOL)isAccessibilityElement {
+	return YES;
+}
+
 - (NSArray *)accessibilityAttributeNames {
 	static NSArray *attributes = nil;
 	if (!attributes) {
