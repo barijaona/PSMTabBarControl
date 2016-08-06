@@ -177,6 +177,12 @@ typedef enum PSMTabStateMask : NSInteger {
 @property (NS_NONATOMIC_IOSONLY, assign) id<PSMTabBarControlDelegate> delegate;
 @property (NS_NONATOMIC_IOSONLY, strong) id partnerView;
 
+#pragma mark Actions
+- (void)overflowMenuAction:(id)sender;
+- (void)closeTabClick:(id)sender;
+- (void)tabClick:(id)sender;
+- (void)tabNothing:(id)sender;
+
 #pragma mark -
 #pragma mark Determining Sizes
 

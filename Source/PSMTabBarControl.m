@@ -61,12 +61,6 @@
 - (void)_positionOverflowMenu;
 - (void)_checkWindowFrame;
 
-// actions
-- (void)overflowMenuAction:(id)sender;
-- (void)closeTabClick:(id)sender;
-- (void)tabClick:(id)sender;
-- (void)tabNothing:(id)sender;
-
 // notification handlers
 - (void)frameDidChange:(NSNotification *)notification;
 - (void)windowDidMove:(NSNotification *)aNotification;
