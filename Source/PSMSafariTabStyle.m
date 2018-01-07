@@ -271,7 +271,7 @@
     [tabBarControl.cells enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         if ([obj state] == NSOnState) {
             selCellIndex = index;
-            stop = YES;
+            *stop = YES;
         }
     }];
     
