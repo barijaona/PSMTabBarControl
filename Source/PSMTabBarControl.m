@@ -2052,7 +2052,7 @@ static NSMutableDictionary *registeredStyleClasses;
 	if([[self delegate] respondsToSelector:@selector(tabView:toolTipForTabViewItem:)]) {
 		return [[self delegate] tabView:[self tabView] toolTipForTabViewItem:[[self cellForPoint:point cellFrame:nil] representedObject]];
 	}
-	return nil;
+	return @"";
 }
 
 #pragma mark -
