@@ -1964,7 +1964,7 @@ static NSMutableDictionary *registeredStyleClasses;
 			[aTabView setDelegate:nil];
 
 			PSMTabBarCell *lastVisibleCell = self.lastVisibleTab;
-			NSUInteger *lastVisibleCellIndex = [self.cells indexOfObject:lastVisibleCell];
+			NSUInteger lastVisibleCellIndex = [self.cells indexOfObject:lastVisibleCell];
 
 			// move it all around first
 			[aTabView removeTabViewItem:tabViewItem];
